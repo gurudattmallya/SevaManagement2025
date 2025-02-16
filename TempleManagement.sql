@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `asset_types` (
   PRIMARY KEY (`ENTITY_CODE`,`ASSET_TYPE_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.asset_types: ~1 rows (approximately)
+-- Dumping data for table act_tms.asset_types: ~0 rows (approximately)
 INSERT INTO `asset_types` (`ENTITY_CODE`, `ASSET_TYPE_CODE`, `ASSET_TYPE_DESC`, `DEPRECIATION_STATUS`, `ACTIVE`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`) VALUES
 	('2', 'ATC1', 'Fixed Asset', 'Y', 'Y', 'SKVTK1', '2021-07-06 16:14:34', 'SKVTK1@2', '2021-07-26 21:06:44', NULL, NULL, NULL);
 
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `asset_types_dtl` (
   PRIMARY KEY (`ENTITY_CODE`,`ASSET_TYPE_CODE`,`SL_NO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.asset_types_dtl: ~1 rows (approximately)
+-- Dumping data for table act_tms.asset_types_dtl: ~0 rows (approximately)
 INSERT INTO `asset_types_dtl` (`ENTITY_CODE`, `ASSET_TYPE_CODE`, `SL_NO`, `PERIOD`, `PERCENTAGE`, `TBA_KEY`) VALUES
 	('2', 'ATC1', 1, 12, 10.000, NULL);
 
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `asset_types_dtl_hist` (
   PRIMARY KEY (`ENTITY_CODE`,`ASSET_TYPE_CODE`,`EFFECTIVE_DATE`,`SL_NO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.asset_types_dtl_hist: ~1 rows (approximately)
+-- Dumping data for table act_tms.asset_types_dtl_hist: ~0 rows (approximately)
 INSERT INTO `asset_types_dtl_hist` (`ENTITY_CODE`, `ASSET_TYPE_CODE`, `EFFECTIVE_DATE`, `SL_NO`, `PERIOD`, `PERCENTAGE`, `TBA_KEY`) VALUES
 	('2', 'ATC1', '2021-07-26 00:00:00', 1, 12, 10.000, NULL);
 
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `asset_types_hist` (
   PRIMARY KEY (`ENTITY_CODE`,`ASSET_TYPE_CODE`,`EFFECTIVE_DATE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.asset_types_hist: ~1 rows (approximately)
+-- Dumping data for table act_tms.asset_types_hist: ~0 rows (approximately)
 INSERT INTO `asset_types_hist` (`ENTITY_CODE`, `ASSET_TYPE_CODE`, `EFFECTIVE_DATE`, `ASSET_TYPE_DESC`, `DEPRECIATION_STATUS`, `ACTIVE`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`) VALUES
 	('2', 'ATC1', '2021-07-26 00:00:00', 'Fixed Asset', 'Y', 'Y', 'SKVTK1@2', '2021-07-26 21:06:44', NULL, NULL, NULL, NULL, NULL);
 
@@ -6009,7 +6009,7 @@ CREATE TABLE IF NOT EXISTS `country` (
   PRIMARY KEY (`COUNTRY_CODE`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=249 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table act_tms.country: ~1 rows (approximately)
+-- Dumping data for table act_tms.country: ~0 rows (approximately)
 INSERT INTO `country` (`COUNTRY_CODE`, `COUNTRY_ISO`, `COUNTRY_NAME`, `COUNTRY_PHONE`) VALUES
 	(101, 'IN', 'India', 91);
 
@@ -6067,7 +6067,7 @@ CREATE TABLE IF NOT EXISTS `currency` (
   PRIMARY KEY (`CURR_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.currency: ~1 rows (approximately)
+-- Dumping data for table act_tms.currency: ~0 rows (approximately)
 INSERT INTO `currency` (`CURR_CODE`, `CURR_NAME`, `CURR_SHORT_NOTATION`, `CURR_SUB_CURR_NAME`, `CURR_SHORT_SUB_NOTIFICATION`, `CURR_NOOF_SUB_UNITS`, `CURR_ISO_CODE`, `CURR_WEEK_HOL1`, `CURR_WEEK_HOL2`, `CURR_CUTOFF_SWIFT_GEN`, `CURR_UNITS_RATE_QUOT`, `CURR_WITHHOLD_TAX_REQD`, `CURR_ENTD_BY`, `CURR_ENTD_ON`, `CURR_LAST_MOD_BY`, `CURR_LAST_MOD_ON`, `CURR_AUTH_BY`, `CURR_AUTH_ON`, `TBA_MAIN_KEY`) VALUES
 	('INR', 'Indian Rupees', 'RS', 'Paise', 'Ps', 100, 356, 1, 0, 0, 0, '0', 'IDCHO', '2017-02-17 10:25:19', 'YAMUNA', '2017-04-01 11:03:05', 'YAMUNA', '2017-04-01 11:50:12', ' ');
 
@@ -6218,9 +6218,11 @@ CREATE TABLE IF NOT EXISTS `deities` (
   PRIMARY KEY (`entity_code`,`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table act_tms.deities: ~9 rows (approximately)
+-- Dumping data for table act_tms.deities: ~12 rows (approximately)
 INSERT INTO `deities` (`entity_code`, `id`, `name`, `is_enabled`, `special_occasions`, `cr_by`, `cr_on`, `mo_by`, `mo_on`, `au_by`, `au_on`) VALUES
 	('1', 1, 'vittobha rukumai', 1, 1, 'ACT1@1', '2025-01-13 17:30:49', NULL, NULL, NULL, NULL),
+	('5', 2, 'Lord sri Ganesh', 1, 1, 'SVT@5', '2025-01-23 18:50:11', NULL, NULL, NULL, NULL),
+	('5', 3, 'VENKATARAMANA', 1, 1, 'SVT@5', '2025-01-23 18:50:26', NULL, NULL, NULL, NULL),
 	('7', 1, 'VENKATARAMANA', 1, 0, 'admin', '2025-01-08 12:39:14', NULL, NULL, NULL, NULL),
 	('7', 2, 'HANUMANTA', 1, 0, 'admin', '2025-01-08 12:39:24', NULL, NULL, NULL, NULL),
 	('7', 3, 'GARUDA', 1, 0, 'admin', '2025-01-08 12:39:36', NULL, NULL, NULL, NULL),
@@ -6841,7 +6843,7 @@ CREATE TABLE IF NOT EXISTS `emp_tax_dtls` (
   PRIMARY KEY (`ENTITY_CODE`,`FIN_YEAR`,`EMP_NUM`,`SL_NO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.emp_tax_dtls: ~1 rows (approximately)
+-- Dumping data for table act_tms.emp_tax_dtls: ~0 rows (approximately)
 INSERT INTO `emp_tax_dtls` (`ENTITY_CODE`, `FIN_YEAR`, `EMP_NUM`, `SL_NO`, `INC_EFF_DATE`, `TAX_SLAB_REGIME`, `AGE_TYPE`, `TAXABLE_AMT_FY`, `PROOF_AMT_FY`, `NET_TAXABLE_AMT_FY`, `IT_AMT_PM`, `IT_AMT_FY`, `EC_AMT_PM`, `EC_AMT_FY`, `SC_AMT_PM`, `SC_AMT_FY`, `TOT_TAX_PM`, `TOT_TAX_FY`, `RB_AMT_FY`, `IT_AMT_FY_REC`, `EC_AMT_FY_REC`, `SC_AMT_FY_REC`, `TOT_TAX_FY_REC`, `IT_AMT_FY_OS`, `EC_AMT_FY_OS`, `SC_AMT_FY_OS`, `TOT_TAX_FY_OS`, `TAX_DEDUCT_DATE`) VALUES
 	('2', 2021, 1, 1, '2021-10-23 00:00:00', 'O', 'LT', 661666.700, 0.000, 0.000, 1219.200, 7315.400, 48.800, 292.600, 0.000, 0.000, 1268.000, 7608.000, 0.000, 0.000, 0.000, 0.000, 0.000, 7315.400, 292.600, 0.000, 7608.000, NULL);
 
@@ -6877,7 +6879,7 @@ CREATE TABLE IF NOT EXISTS `emp_tax_main` (
   PRIMARY KEY (`ENTITY_CODE`,`FIN_YEAR`,`EMP_NUM`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.emp_tax_main: ~1 rows (approximately)
+-- Dumping data for table act_tms.emp_tax_main: ~0 rows (approximately)
 INSERT INTO `emp_tax_main` (`ENTITY_CODE`, `FIN_YEAR`, `EMP_NUM`, `INC_EFF_DATE`, `TAX_SLAB_REGIME`, `AGE_TYPE`, `TAXABLE_AMT_FY`, `PROOF_AMT_FY`, `NET_TAXABLE_AMT_FY`, `IT_AMT_PM`, `IT_AMT_FY`, `EC_AMT_PM`, `EC_AMT_FY`, `SC_AMT_PM`, `SC_AMT_FY`, `TOT_TAX_PM`, `TOT_TAX_FY`, `RB_AMT_FY`, `IT_AMT_FY_REC`, `EC_AMT_FY_REC`, `SC_AMT_FY_REC`, `TOT_TAX_FY_REC`, `IT_AMT_FY_OS`, `EC_AMT_FY_OS`, `SC_AMT_FY_OS`, `TOT_TAX_FY_OS`, `TAX_DEDUCT_DATE`) VALUES
 	('2', 2021, 1, '2021-10-23 00:00:00', 'O', 'LT', 661666.700, 0.000, 0.000, 1219.200, 7315.400, 48.800, 292.600, 0.000, 0.000, 1268.000, 7608.000, 0.000, 0.000, 0.000, 0.000, 0.000, 7315.400, 292.600, 0.000, 7608.000, NULL);
 
@@ -7013,17 +7015,23 @@ CREATE TABLE IF NOT EXISTS `entitynum` (
   `ENTITYNUM_AUTH_ON` datetime DEFAULT NULL,
   `ENTITYNUM_ACTIVE` char(1) DEFAULT NULL,
   `TBA_MAIN_KEY` varchar(25) DEFAULT NULL,
+  `s3_region` varchar(50) DEFAULT NULL,
+  `s3_access_key_id` varchar(100) DEFAULT NULL,
+  `s3_secret_access_key` varchar(200) DEFAULT NULL,
+  `s3_bucket_name` varchar(100) DEFAULT NULL,
+  `s3_cloudfront_url` varchar(200) DEFAULT NULL,
+  `image_key` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`ENTITY_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table act_tms.entitynum: ~6 rows (approximately)
-INSERT INTO `entitynum` (`ENTITY_CODE`, `ENTITYNUM_DESCN`, `ENTITYNUM_SHORT_DESCN`, `MAIN_DEITY`, `OFF_ADDRESS1`, `OFF_ADDRESS2`, `OFF_ADDRESS3`, `PIN_CODE`, `CITY`, `STATE`, `COUNTRY`, `EMAIL_ID`, `CONTACT_NUM`, `MOBILE_NUM`, `ENTITY_CURRENCY_CODE`, `MOBILE_APP_FIREBASE_KEY`, `ENTITYNUM_ENT_TYPE`, `ENTITYNUM_PARENT_ENTITY`, `ENTITYNUM_PARENT_ENTNUM`, `ENTITYNUM_ESTAB_DATE`, `PANCHANGA_TYPE`, `TAB_VALIDATION_KEY`, `URL`, `CONSUMER_KEY`, `CONSUMER_SECRET`, `RPT_LOGO_NAME`, `LOGO_PATH`, `SMS_SERVICE`, `EMAIL_SERVICE`, `ENTITY_PO_REF`, `WEBSITE`, `GST_NUM`, `CIN`, `SMS_THRESHOLD_VALUE`, `ENTITYNUM_ENTD_BY`, `ENTITYNUM_ENTD_ON`, `ENTITYNUM_LAST_MOD_BY`, `ENTITYNUM_LAST_MOD_ON`, `ENTITYNUM_AUTH_BY`, `ENTITYNUM_AUTH_ON`, `ENTITYNUM_ACTIVE`, `TBA_MAIN_KEY`) VALUES
-	('1', 'Arisecraft Technologies Private Limited', 'Arisecraft', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'INR', '', NULL, NULL, NULL, '2021-07-09 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Y', NULL, NULL, NULL, NULL, NULL, 0, 'SKVTK1', '2021-07-09 20:49:12', 'ACT1@1', '2021-08-14 11:34:16', NULL, NULL, 'Y', NULL),
-	('2', 'Shree Venkataramana Temple, Kallianpur', 'SVT_KALLIANPUR', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'INR', 'AAAAiPa4teg:APA91bH60L9hRN8JhOrytHeRBR7XsJoVN0XG7G_Gpe7n0FSgv1aaOPURcb4PFh3hr-OCzMgbA6OTtpovEj6GquK3vQr16m-tj_zVHUPQ5GiS9qFWYjZurt2aL82-lZywc9vMTMRoyS_m', NULL, NULL, NULL, '2021-04-12 00:00:00', 'G', '', 'https://svtkallianpur.com/', 'ck_bcce6bb4147887486b06d2d097b42c75f6b78bdf', 'cs_d3ea533752b108bde8915d39a97df1efb2bd6d01', 'ACT-TMS-LOGO-1.jpg', '/var/www/html/style/images/', 'Y', '', NULL, NULL, NULL, NULL, 0, 'SKVTK1', '2021-04-11 12:42:45', 'ACT1@1', '2021-10-12 11:45:38', NULL, NULL, 'Y', NULL),
-	('3', 'Shree Sukandakatte Mahaganapathi Temple, Kallianpur', 'SMT_KALLIANPUR', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'INR', NULL, NULL, NULL, NULL, '2021-04-11 00:00:00', NULL, NULL, 'https://sunkadakatte.in/', 'ck_101657dd0fa6ece7d7244725ef1a67c499c9c0ef', 'cs_e30e1f3081dc3f6e4809ec9e8d7394b266cd5823', 'Sunakdakatte-Logo.jpg', '/var/www/html/style/images/', 'Y', NULL, NULL, NULL, NULL, NULL, 500, 'SKVTK1', '2021-04-11 21:48:16', 'SKVTK1', '2021-07-09 20:54:54', NULL, NULL, 'Y', NULL),
-	('5', 'SVT Kundapura', 'SVT_KUNDAPURA', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'INR', NULL, NULL, NULL, NULL, '2021-04-11 00:00:00', NULL, NULL, 'https://sunkadakatte.in/', 'ck_101657dd0fa6ece7d7244725ef1a67c499c9c0ef', 'cs_e30e1f3081dc3f6e4809ec9e8d7394b266cd5823', 'Sunakdakatte-Logo.jpg', '/var/www/html/style/images/', 'Y', NULL, NULL, NULL, NULL, NULL, 500, 'SKVTK1', '2021-04-11 21:48:16', 'SKVTK1', '2021-07-09 20:54:54', NULL, NULL, 'Y', NULL),
-	('6', 'Demo Temple', 'SVT_KARKALA', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'INR', NULL, NULL, NULL, NULL, '2021-10-12 00:00:00', 'G', '', '', '', '', '', NULL, 'N', 'N', NULL, NULL, NULL, NULL, 0, 'ACT1@1', '2021-10-12 11:42:55', NULL, NULL, NULL, NULL, 'Y', NULL),
-	('7', 'SVT UDUPI', 'SVT_UDUPI', NULL, 'Main road ', 'udupi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'admin', '2025-01-01 12:37:35', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `entitynum` (`ENTITY_CODE`, `ENTITYNUM_DESCN`, `ENTITYNUM_SHORT_DESCN`, `MAIN_DEITY`, `OFF_ADDRESS1`, `OFF_ADDRESS2`, `OFF_ADDRESS3`, `PIN_CODE`, `CITY`, `STATE`, `COUNTRY`, `EMAIL_ID`, `CONTACT_NUM`, `MOBILE_NUM`, `ENTITY_CURRENCY_CODE`, `MOBILE_APP_FIREBASE_KEY`, `ENTITYNUM_ENT_TYPE`, `ENTITYNUM_PARENT_ENTITY`, `ENTITYNUM_PARENT_ENTNUM`, `ENTITYNUM_ESTAB_DATE`, `PANCHANGA_TYPE`, `TAB_VALIDATION_KEY`, `URL`, `CONSUMER_KEY`, `CONSUMER_SECRET`, `RPT_LOGO_NAME`, `LOGO_PATH`, `SMS_SERVICE`, `EMAIL_SERVICE`, `ENTITY_PO_REF`, `WEBSITE`, `GST_NUM`, `CIN`, `SMS_THRESHOLD_VALUE`, `ENTITYNUM_ENTD_BY`, `ENTITYNUM_ENTD_ON`, `ENTITYNUM_LAST_MOD_BY`, `ENTITYNUM_LAST_MOD_ON`, `ENTITYNUM_AUTH_BY`, `ENTITYNUM_AUTH_ON`, `ENTITYNUM_ACTIVE`, `TBA_MAIN_KEY`, `s3_region`, `s3_access_key_id`, `s3_secret_access_key`, `s3_bucket_name`, `s3_cloudfront_url`, `image_key`) VALUES
+	('1', 'Arisecraft Technologies Private Limited', 'Arisecraft', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'INR', '', NULL, NULL, NULL, '2021-07-09 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Y', NULL, NULL, NULL, NULL, NULL, 0, 'SKVTK1', '2021-07-09 20:49:12', 'ACT1@1', '2021-08-14 11:34:16', NULL, NULL, 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('2', 'Shree Venkataramana Temple, Kallianpur', 'SVT_KALLIANPUR', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'INR', 'AAAAiPa4teg:APA91bH60L9hRN8JhOrytHeRBR7XsJoVN0XG7G_Gpe7n0FSgv1aaOPURcb4PFh3hr-OCzMgbA6OTtpovEj6GquK3vQr16m-tj_zVHUPQ5GiS9qFWYjZurt2aL82-lZywc9vMTMRoyS_m', NULL, NULL, NULL, '2021-04-12 00:00:00', 'G', '', 'https://svtkallianpur.com/', 'ck_bcce6bb4147887486b06d2d097b42c75f6b78bdf', 'cs_d3ea533752b108bde8915d39a97df1efb2bd6d01', 'ACT-TMS-LOGO-1.jpg', '/var/www/html/style/images/', 'Y', '', NULL, NULL, NULL, NULL, 0, 'SKVTK1', '2021-04-11 12:42:45', 'ACT1@1', '2021-10-12 11:45:38', NULL, NULL, 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('3', 'Shree Sukandakatte Mahaganapathi Temple, Kallianpur', 'SMT_KALLIANPUR', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'INR', NULL, NULL, NULL, NULL, '2021-04-11 00:00:00', NULL, NULL, 'https://sunkadakatte.in/', 'ck_101657dd0fa6ece7d7244725ef1a67c499c9c0ef', 'cs_e30e1f3081dc3f6e4809ec9e8d7394b266cd5823', 'Sunakdakatte-Logo.jpg', '/var/www/html/style/images/', 'Y', NULL, NULL, NULL, NULL, NULL, 500, 'SKVTK1', '2021-04-11 21:48:16', 'SKVTK1', '2021-07-09 20:54:54', NULL, NULL, 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('5', 'SVT Kundapura', 'SVT_KUNDAPURA', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'INR', NULL, NULL, NULL, NULL, '2021-04-11 00:00:00', NULL, NULL, 'https://sunkadakatte.in/', 'ck_101657dd0fa6ece7d7244725ef1a67c499c9c0ef', 'cs_e30e1f3081dc3f6e4809ec9e8d7394b266cd5823', 'Sunakdakatte-Logo.jpg', '/var/www/html/style/images/', 'Y', NULL, NULL, NULL, NULL, NULL, 500, 'SKVTK1', '2021-04-11 21:48:16', 'SKVTK1', '2021-07-09 20:54:54', NULL, NULL, 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('6', 'Demo Temple', 'SVT_KARKALA', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'INR', NULL, NULL, NULL, NULL, '2021-10-12 00:00:00', 'G', '', '', '', '', '', NULL, 'N', 'N', NULL, NULL, NULL, NULL, 0, 'ACT1@1', '2021-10-12 11:42:55', NULL, NULL, NULL, NULL, 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 'SVT UDUPI', 'SVT_UDUPI', NULL, 'Main road ', 'udupi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'admin', '2025-01-01 12:37:35', NULL, NULL, NULL, NULL, NULL, NULL, 'eu-north-1', 'AKIAVRUVUCOWBPK36BGA', 'Fr2+SXAZ8lh5sg70maGTaHUUIbR+5POjOwUeo1Xi', 'act-test', 'https://d25kqhcxhjw32g.cloudfront.net', '7/home-images/1738353883589-karkala-temple-homeslide-01.webp');
 
 -- Dumping structure for table act_tms.entitynum_dtl
 CREATE TABLE IF NOT EXISTS `entitynum_dtl` (
@@ -8028,7 +8036,7 @@ CREATE TABLE IF NOT EXISTS `latest_annoucements` (
   PRIMARY KEY (`ENTITY_CODE`,`LA_DATE`,`LA_SL_NO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.latest_annoucements: ~1 rows (approximately)
+-- Dumping data for table act_tms.latest_annoucements: ~0 rows (approximately)
 INSERT INTO `latest_annoucements` (`ENTITY_CODE`, `LA_DATE`, `LA_SL_NO`, `LA_HEADER`, `LA_MESSAGE`, `LA_NOTE`, `LA_SMS`, `LA_EMAIL`, `LA_ACTIVE`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`) VALUES
 	('2', '2021-09-16 00:00:00', 1, 'LIVE', 'harikhatha seva by vedamurthy kallianpur sithram bhat accompanied by Dattetreya Kini & Shanker Shenoy ', 'M', 'G', 'G', 'Y', 'SKVTK1@2', '2021-09-16 23:22:42', 'SKVTK1@2', '2021-10-03 22:12:01', NULL, NULL, NULL);
 
@@ -8054,7 +8062,7 @@ CREATE TABLE IF NOT EXISTS `latest_annoucements_hist` (
   PRIMARY KEY (`ENTITY_CODE`,`CAL_YEAR`,`LA_DATE`,`LA_SL_NO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.latest_annoucements_hist: ~1 rows (approximately)
+-- Dumping data for table act_tms.latest_annoucements_hist: ~0 rows (approximately)
 INSERT INTO `latest_annoucements_hist` (`ENTITY_CODE`, `CAL_YEAR`, `LA_DATE`, `LA_SL_NO`, `LA_HEADER`, `LA_MESSAGE`, `LA_NOTE`, `LA_SMS`, `LA_EMAIL`, `LA_ACTIVE`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`) VALUES
 	('2', 2021, '2021-09-16 00:00:00', 1, 'LIVE', 'harikhatha seva by vedamurthy kallianpur sithram bhat accompanied by Dattetreya Kini & Shanker Shenoy ', 'M', 'G', 'G', 'Y', 'SKVTK1@2', '2021-10-03 22:12:01', 'SKVTK1@2', '2021-10-03 22:12:01', NULL, NULL, NULL);
 
@@ -8194,10 +8202,13 @@ CREATE TABLE IF NOT EXISTS `mastersevas` (
   PRIMARY KEY (`entity_code`,`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table act_tms.mastersevas: ~4 rows (approximately)
+-- Dumping data for table act_tms.mastersevas: ~6 rows (approximately)
 INSERT INTO `mastersevas` (`entity_code`, `id`, `name`, `description`, `is_enabled`, `cr_by`, `cr_on`, `mo_by`, `mo_on`, `au_by`, `au_on`, `SEVA_SASHWATH`, `duration`) VALUES
 	('1', 1, 'others', 'others', 1, 'ACT1@1', '2025-01-13 23:01:07', 'ACT1@1', '2025-01-13 23:01:07', NULL, NULL, 'O', NULL),
-	('7', 1, 'SASHWATH SEVA', 'sashwath seva', 1, 'admin', '2025-01-08 18:10:39', 'admin', '2025-01-09 15:58:13', NULL, NULL, 'SS', NULL),
+	('1', 2, 'others1', 'other', 1, 'ACT1@1', '2025-01-24 19:28:23', 'ACT1@1', '2025-01-24 19:28:23', NULL, NULL, 'O', NULL),
+	('5', 1, 'others', 'others', 1, 'SVT@5', '2025-01-24 00:20:47', 'SVT@5', '2025-01-24 00:34:35', NULL, NULL, 'O', NULL),
+	('5', 2, 'othersq', '1', 1, 'SVT@5', '2025-01-24 19:29:26', 'SVT@5', '2025-01-24 19:29:26', NULL, NULL, 'O', NULL),
+	('7', 1, 'SASHWATH SEVA', 'sashwath seva', 1, 'admin', '2025-01-08 18:10:39', 'admin', '2025-01-30 22:47:21', NULL, NULL, 'SS', NULL),
 	('7', 2, 'NITYANIDHI SEVA', 'nityanidhi seva', 1, 'admin', '2025-01-08 18:11:02', 'admin', '2025-01-08 18:11:02', NULL, NULL, 'N', NULL),
 	('7', 3, 'others', 'others', 1, 'admin', '2025-01-13 23:01:49', 'admin', '2025-01-17 12:08:11', NULL, NULL, 'O', NULL);
 
@@ -8289,30 +8300,9 @@ CREATE TABLE IF NOT EXISTS `nithyanidhi_seva` (
   PRIMARY KEY (`ENTITY_CODE`,`NS_CUST_CODE`,`NS_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.nithyanidhi_seva: ~22 rows (approximately)
+-- Dumping data for table act_tms.nithyanidhi_seva: ~0 rows (approximately)
 INSERT INTO `nithyanidhi_seva` (`ENTITY_CODE`, `NS_CUST_CODE`, `NS_CODE`, `NS_SEVA_DATE`, `NS_IN_MEMORY`, `NS_BY_WHOM`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`) VALUES
-	('7', 4, 'NS1736788249513506', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:40:49', NULL, NULL, NULL, NULL, NULL),
-	('7', 4, 'NS1736788249524621', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:40:49', NULL, NULL, NULL, NULL, NULL),
-	('7', 4, 'NS1736788249532104', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:40:49', NULL, NULL, NULL, NULL, NULL),
-	('7', 4, 'NS1736788249539673', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:40:49', NULL, NULL, NULL, NULL, NULL),
-	('7', 5, 'NS1736789091201967', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:54:51', NULL, NULL, NULL, NULL, NULL),
-	('7', 5, 'NS1736789091209632', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:54:51', NULL, NULL, NULL, NULL, NULL),
-	('7', 5, 'NS173678909121642', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:54:51', NULL, NULL, NULL, NULL, NULL),
-	('7', 5, 'NS1736789091222678', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:54:51', NULL, NULL, NULL, NULL, NULL),
-	('7', 6, 'NS1736789159961869', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:55:59', NULL, NULL, NULL, NULL, NULL),
-	('7', 6, 'NS1736789159968750', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:55:59', NULL, NULL, NULL, NULL, NULL),
-	('7', 6, 'NS1736789159975467', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:55:59', NULL, NULL, NULL, NULL, NULL),
-	('7', 6, 'NS1736789159982460', '2025-01-15 00:00:00', NULL, NULL, '', '2025-01-13 22:55:59', NULL, NULL, NULL, NULL, NULL),
-	('7', 10, 'NS1737022733004455', '2025-01-17 00:00:00', NULL, NULL, 'gurudatta', '2025-01-16 15:48:53', NULL, NULL, NULL, NULL, NULL),
-	('7', 11, 'NS1737023471939570', '2025-01-17 00:00:00', NULL, NULL, 'gurudatta', '2025-01-16 16:01:11', NULL, NULL, NULL, NULL, NULL),
-	('7', 13, 'NS1737026687460282', '2025-01-31 00:00:00', NULL, NULL, 'gurudatta', '2025-01-16 16:54:47', NULL, NULL, NULL, NULL, NULL),
-	('7', 14, 'NS1737027949000569', '2025-01-31 00:00:00', NULL, NULL, 'gurudatta', '2025-01-16 17:15:49', NULL, NULL, NULL, NULL, NULL),
-	('7', 15, 'NS17370287823926', '2025-01-31 00:00:00', NULL, NULL, 'gurudatta', '2025-01-16 17:29:42', NULL, NULL, NULL, NULL, NULL),
-	('7', 16, 'NS173702959058188', '2025-01-31 00:00:00', NULL, NULL, 'gurudatta', '2025-01-16 17:43:10', NULL, NULL, NULL, NULL, NULL),
-	('7', 17, 'NS1737031692781939', '2025-01-31 00:00:00', NULL, NULL, 'gurudatta', '2025-01-16 18:18:12', NULL, NULL, NULL, NULL, NULL),
-	('7', 18, 'NS1737096455560744', '2025-01-17 00:00:00', NULL, NULL, 'gurudatta', '2025-01-17 12:17:35', NULL, NULL, NULL, NULL, NULL),
-	('7', 19, 'NS1737101115115948', '2025-01-17 00:00:00', NULL, NULL, 'gurudatta', '2025-01-17 13:35:15', NULL, NULL, NULL, NULL, NULL),
-	('7', 2234, 'NS1737101575430542', '2025-01-17 00:00:00', NULL, NULL, 'gurudatta', '2025-01-17 13:42:55', NULL, NULL, NULL, NULL, NULL);
+	('7', 34, '7|2025-02-03 09:06:12', '2025-02-03 00:00:00', NULL, NULL, 'Ashok ', '2025-02-03 14:36:12', NULL, NULL, NULL, NULL, NULL);
 
 -- Dumping structure for table act_tms.nithyanidhi_seva_dtl
 CREATE TABLE IF NOT EXISTS `nithyanidhi_seva_dtl` (
@@ -8341,30 +8331,9 @@ CREATE TABLE IF NOT EXISTS `nithyanidhi_seva_dtl` (
   PRIMARY KEY (`ENTITY_CODE`,`NSD_CUST_CODE`,`NSD_CODE`,`NSD_DTL_SL`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.nithyanidhi_seva_dtl: ~22 rows (approximately)
+-- Dumping data for table act_tms.nithyanidhi_seva_dtl: ~0 rows (approximately)
 INSERT INTO `nithyanidhi_seva_dtl` (`ENTITY_CODE`, `NSD_CUST_CODE`, `NSD_CODE`, `NSD_DTL_SL`, `NSD_SEVA_CODE`, `NSD_SEVA_AMT`, `NSD_SEVA_QTY`, `NSD_TOT_SEVA_AMT`, `NSD_SEVA_DATE`, `NSD_REMARKS`, `NSD_RECPT_DATE`, `NSD_RECPT_NUM`, `NSD_RECPT_TYPE`, `NSD_RECPT_AMT`, `NSD_CLEARING_TYPE`, `NSD_CLEAING_REF_NUM`, `NSD_CLEARING_AMT`, `NSD_CLEARING_DATE`, `NSD_DRAWEE_BANK`, `NSD_DRAWEE_BRANCH`, `FA_TRAN_DATE`, `FA_TRAN_BATCH_NUMBER`) VALUES
-	('7', 4, 'NS1736788249513506', 1, 'N001', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 4, 'NS1736788249524621', 1, 'N003', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 4, 'NS1736788249532104', 1, 'N003', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 4, 'NS1736788249539673', 1, 'N004', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 5, 'NS1736789091201967', 1, 'N001', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 5, 'NS1736789091209632', 1, 'N003', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 5, 'NS173678909121642', 1, 'N003', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 5, 'NS1736789091222678', 1, 'N004', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 6, 'NS1736789159961869', 1, 'N001', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 6, 'NS1736789159968750', 1, 'N003', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 6, 'NS1736789159975467', 1, 'N003', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 6, 'NS1736789159982460', 1, 'N004', 50.000, 1, 50.000, '2025-01-15 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 10, 'NS1737022733004455', 1, 'N001', 50.000, 1, 50.000, '2025-01-17 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 11, 'NS1737023471939570', 1, 'N001', 50.000, 1, 50.000, '2025-01-17 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 13, 'NS1737026687460282', 1, 'N001', 50.000, 1, 50.000, '2025-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 14, 'NS1737027949000569', 1, 'N001', 50.000, 1, 50.000, '2025-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 15, 'NS17370287823926', 1, 'N001', 50.000, 1, 50.000, '2025-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 16, 'NS173702959058188', 1, 'N001', 50.000, 1, 50.000, '2025-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 17, 'NS1737031692781939', 1, 'N001', 50.000, 1, 50.000, '2025-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 18, 'NS1737096455560744', 1, 'N002', 50.000, 1, 50.000, '2025-01-17 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 19, 'NS1737101115115948', 1, 'N002', 50.000, 1, 50.000, '2025-01-17 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 2234, 'NS1737101575430542', 1, 'N002', 50.000, 1, 50.000, '2025-01-17 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+	('7', 34, '7|2025-02-03 09:06:12', 1, 'N001', 50.000, 1, 50.000, '2025-02-03 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- Dumping structure for table act_tms.online_txn_dtls
 CREATE TABLE IF NOT EXISTS `online_txn_dtls` (
@@ -8469,18 +8438,25 @@ CREATE TABLE IF NOT EXISTS `other_seva` (
   PRIMARY KEY (`ENTITY_CODE`,`NS_CUST_CODE`,`NS_CODE`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.other_seva: ~10 rows (approximately)
+-- Dumping data for table act_tms.other_seva: ~15 rows (approximately)
 INSERT INTO `other_seva` (`ENTITY_CODE`, `NS_CUST_CODE`, `NS_CODE`, `NS_SEVA_DATE`, `NS_IN_MEMORY`, `NS_BY_WHOM`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`) VALUES
-	('7', 5, 'OS1736837433829976', '2025-01-05 00:00:00', NULL, NULL, 'gurudatta', '2025-01-14 12:20:33', NULL, NULL, NULL, NULL, NULL),
-	('7', 6, 'OS1736839536561902', '2025-01-23 00:00:00', NULL, NULL, 'gurudatt', '2025-01-14 12:55:36', NULL, NULL, NULL, NULL, NULL),
-	('7', 7, 'OS1736789582166864', '2025-01-05 00:00:00', NULL, NULL, 'gurudatta', '2025-01-13 23:03:02', NULL, NULL, NULL, NULL, NULL),
-	('7', 7, 'OS173683957839649', '2025-01-23 00:00:00', NULL, NULL, 'gurudatt', '2025-01-14 12:56:18', NULL, NULL, NULL, NULL, NULL),
-	('7', 18, 'OS1737096455569477', '2025-01-25 00:00:00', NULL, NULL, 'gurudatta', '2025-01-17 12:17:35', NULL, NULL, NULL, NULL, NULL),
-	('7', 18, 'OS1737096455584661', '2025-01-16 00:00:00', NULL, NULL, 'gurudatta', '2025-01-17 12:17:35', NULL, NULL, NULL, NULL, NULL),
-	('7', 19, 'OS1737101115124891', '2025-01-25 00:00:00', NULL, NULL, 'gurudatta', '2025-01-17 13:35:15', NULL, NULL, NULL, NULL, NULL),
-	('7', 19, 'OS1737101115133727', '2025-01-16 00:00:00', NULL, NULL, 'gurudatta', '2025-01-17 13:35:15', NULL, NULL, NULL, NULL, NULL),
-	('7', 2234, 'OS1737101575437967', '2025-01-25 00:00:00', NULL, NULL, 'gurudatta', '2025-01-17 13:42:55', NULL, NULL, NULL, NULL, NULL),
-	('7', 2234, 'OS1737101575442301', '2025-01-16 00:00:00', NULL, NULL, 'gurudatta', '2025-01-17 13:42:55', NULL, NULL, NULL, NULL, NULL);
+	('5', 7, '5|2025-01-27 12:31:39', '2025-01-27 00:00:00', NULL, NULL, 'hgftmjj', '2025-01-27 18:01:39', NULL, NULL, NULL, NULL, NULL),
+	('5', 8, '5|2025-01-27 15:33:03', '2025-01-27 00:00:00', NULL, NULL, 'gurudatt', '2025-01-27 21:03:03', NULL, NULL, NULL, NULL, NULL),
+	('7', 21, '7|2025-01-27 15:06:34', '2025-01-27 00:00:00', NULL, NULL, 'gurudatta', '2025-01-27 20:36:34', NULL, NULL, NULL, NULL, NULL),
+	('7', 22, '7|2025-01-27 15:06:51', '2025-01-27 00:00:00', NULL, NULL, 'gurudatta', '2025-01-27 20:36:51', NULL, NULL, NULL, NULL, NULL),
+	('7', 23, '7|2025-01-27 15:18:15', '2025-01-27 00:00:00', NULL, NULL, 'gurudatta', '2025-01-27 20:48:15', NULL, NULL, NULL, NULL, NULL),
+	('7', 24, '7|2025-01-27 15:19:28', '2025-01-27 00:00:00', NULL, NULL, 'gurudatta', '2025-01-27 20:49:28', NULL, NULL, NULL, NULL, NULL),
+	('7', 25, '7|2025-01-27 15:20:17', '2025-01-27 00:00:00', NULL, NULL, 'gurudatta', '2025-01-27 20:50:17', NULL, NULL, NULL, NULL, NULL),
+	('7', 26, '7|2025-01-27 15:26:55', '2025-01-27 00:00:00', NULL, NULL, 'gurudatta', '2025-01-27 20:56:55', NULL, NULL, NULL, NULL, NULL),
+	('7', 28, '7|2025-01-27 15:37:17', '2025-01-27 00:00:00', NULL, NULL, 'gurudatt', '2025-01-27 21:07:17', NULL, NULL, NULL, NULL, NULL),
+	('7', 29, '7|2025-01-27 15:38:26', '2025-01-27 00:00:00', NULL, NULL, 'gurudatt', '2025-01-27 21:08:26', NULL, NULL, NULL, NULL, NULL),
+	('7', 29, '7|2025-01-27 16:44:43', '2025-01-31 00:00:00', NULL, NULL, 'gurudatta', '2025-01-27 22:14:43', NULL, NULL, NULL, NULL, NULL),
+	('7', 32, '7|2025-01-29 06:52:02', '2025-01-31 00:00:00', NULL, NULL, 'gurudatta', '2025-01-29 12:22:02', NULL, NULL, NULL, NULL, NULL),
+	('7', 33, '7|2025-01-29 19:17:37', '2025-01-30 00:00:00', NULL, NULL, 'gurudatta', '2025-01-30 00:47:37', NULL, NULL, NULL, NULL, NULL),
+	('7', 35, '7|2025-02-04 15:05:39', '2025-02-06 00:00:00', NULL, NULL, 'Ambika', '2025-02-04 20:35:39', NULL, NULL, NULL, NULL, NULL),
+	('7', 36, '7|2025-02-04 15:22:55', '2025-02-04 00:00:00', NULL, NULL, 'Ambikaa', '2025-02-04 20:52:55', NULL, NULL, NULL, NULL, NULL),
+	('7', 37, '7|2025-02-06 06:41:41', '2025-02-06 00:00:00', NULL, NULL, 'Gur', '2025-02-06 12:11:41', NULL, NULL, NULL, NULL, NULL),
+	('7', 38, '7|2025-02-06 06:43:06', '2025-02-06 00:00:00', NULL, NULL, 'gur', '2025-02-06 12:13:06', NULL, NULL, NULL, NULL, NULL);
 
 -- Dumping structure for table act_tms.other_seva_dtl
 CREATE TABLE IF NOT EXISTS `other_seva_dtl` (
@@ -8509,18 +8485,135 @@ CREATE TABLE IF NOT EXISTS `other_seva_dtl` (
   PRIMARY KEY (`ENTITY_CODE`,`NSD_CUST_CODE`,`NSD_CODE`,`NSD_DTL_SL`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.other_seva_dtl: ~10 rows (approximately)
+-- Dumping data for table act_tms.other_seva_dtl: ~16 rows (approximately)
 INSERT INTO `other_seva_dtl` (`ENTITY_CODE`, `NSD_CUST_CODE`, `NSD_CODE`, `NSD_DTL_SL`, `NSD_SEVA_CODE`, `NSD_SEVA_AMT`, `NSD_SEVA_QTY`, `NSD_TOT_SEVA_AMT`, `NSD_SEVA_DATE`, `NSD_REMARKS`, `NSD_RECPT_DATE`, `NSD_RECPT_NUM`, `NSD_RECPT_TYPE`, `NSD_RECPT_AMT`, `NSD_CLEARING_TYPE`, `NSD_CLEAING_REF_NUM`, `NSD_CLEARING_AMT`, `NSD_CLEARING_DATE`, `NSD_DRAWEE_BANK`, `NSD_DRAWEE_BRANCH`, `FA_TRAN_DATE`, `FA_TRAN_BATCH_NUMBER`) VALUES
-	('7', 5, 'OS1736837433829976', 1, 'O001', 20000.000, 1, 20000.000, '2025-01-05 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 6, 'OS1736839536561902', 1, 'S0001', 5000.000, 1, 5000.000, '2025-01-23 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 7, 'OS1736789582166864', 1, 'O001', 20000.000, 1, 20000.000, '2025-01-05 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 7, 'OS173683957839649', 1, 'S0001', 5000.000, 1, 5000.000, '2025-01-23 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 18, 'OS1737096455569477', 1, 'O001', 20000.000, 1, 20000.000, '2025-01-25 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 18, 'OS1737096455584661', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-16 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 19, 'OS1737101115124891', 1, 'O001', 20000.000, 1, 20000.000, '2025-01-25 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 19, 'OS1737101115133727', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-16 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 2234, 'OS1737101575437967', 1, 'O001', 20000.000, 1, 20000.000, '2025-01-25 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 2234, 'OS1737101575442301', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-16 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+	('5', 7, '5|2025-01-27 12:31:39', 1, 'O002', 2132.000, 1, 2132.000, '2025-01-27 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('5', 8, '5|2025-01-27 15:33:03', 1, 'O002', 2132.000, 1, 2132.000, '2025-01-27 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 21, '7|2025-01-27 15:06:34', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-27 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 22, '7|2025-01-27 15:06:51', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-27 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 23, '7|2025-01-27 15:18:15', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-27 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 24, '7|2025-01-27 15:19:28', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-27 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 25, '7|2025-01-27 15:20:17', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-27 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 26, '7|2025-01-27 15:26:55', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-27 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 28, '7|2025-01-27 15:37:17', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-27 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 29, '7|2025-01-27 15:38:26', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-27 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 29, '7|2025-01-27 16:44:43', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 32, '7|2025-01-29 06:52:02', 1, 'S0002', 3500.000, 1, 3500.000, '2025-01-31 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 35, '7|2025-02-04 15:05:39', 1, 'O002', 200.000, 1, 200.000, '2025-02-06 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 36, '7|2025-02-04 15:22:55', 1, 'O001', 20000.000, 1, 20000.000, '2025-02-04 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 37, '7|2025-02-06 06:41:41', 1, 'S0002', 3500.000, 1, 3500.000, '2025-02-06 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 38, '7|2025-02-06 06:43:06', 1, 'S0002', 3500.000, 1, 3500.000, '2025-02-06 00:00:00', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- Dumping structure for table act_tms.pages
+CREATE TABLE IF NOT EXISTS `pages` (
+  `page_id` int(11) NOT NULL,
+  `page_name` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `access_for_all` tinyint(1) DEFAULT 0,
+  `cr_on` datetime NOT NULL,
+  `cr_by` varchar(50) NOT NULL,
+  `mo_on` datetime DEFAULT NULL,
+  `mo_by` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`page_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- Dumping data for table act_tms.pages: ~9 rows (approximately)
+INSERT INTO `pages` (`page_id`, `page_name`, `name`, `description`, `access_for_all`, `cr_on`, `cr_by`, `mo_on`, `mo_by`) VALUES
+	(1, '/admin/dashboard', 'Dashboard', 'Admin dashboard page', 0, '2025-01-28 13:50:26', 'SYSTEM', NULL, NULL),
+	(2, '/admin/manage/deity', 'Deity Management', 'Manage temple deities', 0, '2025-01-28 13:50:26', 'SYSTEM', NULL, NULL),
+	(3, '/admin/manage/master-sevas', 'Master Sevas', 'Manage master sevas', 0, '2025-01-28 13:50:26', 'SYSTEM', NULL, NULL),
+	(4, '/admin/manage/special-sevas', 'Special Sevas', 'Manage special sevas', 0, '2025-01-28 13:50:26', 'SYSTEM', NULL, NULL),
+	(5, '/admin/manage/sub-sevas', 'Sub Sevas', 'Manage sub sevas', 0, '2025-01-28 13:50:26', 'SYSTEM', NULL, NULL),
+	(6, '/admin/manage/statistics', 'Statistics', 'View temple statistics', 0, '2025-01-28 13:50:26', 'SYSTEM', NULL, NULL),
+	(7, '/admin/manage/scanner', 'Scanner', 'Universal scanner page', 0, '2025-01-28 13:50:26', 'SYSTEM', NULL, NULL),
+	(8, '/admin/manage/roles', 'Role Management', 'Manage user roles', 0, '2025-01-28 13:50:26', 'SYSTEM', NULL, NULL),
+	(9, '/admin/manage/users', 'User Management', 'Manage temple users', 0, '2025-01-28 13:50:26', 'SYSTEM', NULL, NULL),
+	(10, '/admin/manage/image', 'homeImage', 'Update Home page Images', 0, '2025-01-31 12:43:02', 'SYSTEM', NULL, NULL);
+
+-- Dumping structure for table act_tms.page_access
+CREATE TABLE IF NOT EXISTS `page_access` (
+  `entity_id` varchar(12) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `page_id` int(11) NOT NULL,
+  `access_to_add` tinyint(1) DEFAULT 0,
+  `access_to_update` tinyint(1) DEFAULT 0,
+  `access_to_delete` tinyint(1) DEFAULT 0,
+  `cr_by` varchar(50) NOT NULL,
+  `cr_on` datetime NOT NULL,
+  `mo_by` varchar(50) DEFAULT NULL,
+  `mo_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`entity_id`,`role_id`,`page_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- Dumping data for table act_tms.page_access: ~66 rows (approximately)
+INSERT INTO `page_access` (`entity_id`, `role_id`, `page_id`, `access_to_add`, `access_to_update`, `access_to_delete`, `cr_by`, `cr_on`, `mo_by`, `mo_on`) VALUES
+	('1', 1, 1, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('1', 1, 2, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('1', 1, 3, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('1', 1, 4, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('1', 1, 5, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('1', 1, 6, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('1', 1, 7, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('1', 1, 8, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('1', 1, 9, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('1', 1, 10, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('2', 1, 1, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('2', 1, 2, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('2', 1, 3, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('2', 1, 4, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('2', 1, 5, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('2', 1, 6, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('2', 1, 7, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('2', 1, 8, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('2', 1, 9, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('3', 1, 1, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('3', 1, 2, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('3', 1, 3, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('3', 1, 4, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('3', 1, 5, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('3', 1, 6, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('3', 1, 7, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('3', 1, 8, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('3', 1, 9, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('4', 1, 1, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('4', 1, 2, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('4', 1, 3, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('4', 1, 4, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('4', 1, 5, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('4', 1, 6, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('4', 1, 7, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('4', 1, 8, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('4', 1, 9, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('5', 1, 1, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('5', 1, 2, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('5', 1, 3, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('5', 1, 4, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('5', 1, 5, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('5', 1, 6, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('5', 1, 7, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('5', 1, 8, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('5', 1, 9, 1, 1, 1, 'SYSTEM', '2025-01-28 13:51:58', NULL, NULL),
+	('7', 1, 1, 1, 1, 1, 'admin', '2025-02-06 13:56:57', NULL, NULL),
+	('7', 1, 2, 1, 1, 1, 'admin', '2025-02-06 13:56:57', NULL, NULL),
+	('7', 1, 3, 1, 1, 1, 'admin', '2025-02-06 13:56:57', NULL, NULL),
+	('7', 1, 4, 1, 1, 1, 'admin', '2025-02-06 13:56:57', NULL, NULL),
+	('7', 1, 5, 1, 1, 1, 'admin', '2025-02-06 13:56:57', NULL, NULL),
+	('7', 1, 6, 1, 1, 1, 'admin', '2025-02-06 13:56:57', NULL, NULL),
+	('7', 1, 7, 1, 1, 1, 'admin', '2025-02-06 13:56:57', NULL, NULL),
+	('7', 1, 8, 1, 1, 1, 'admin', '2025-02-06 13:56:57', NULL, NULL),
+	('7', 1, 9, 1, 1, 1, 'admin', '2025-02-06 13:56:57', NULL, NULL),
+	('7', 1, 10, 1, 1, 1, 'admin', '2025-02-06 13:56:57', NULL, NULL),
+	('7', 2, 1, 1, 1, 0, 'admin', '2025-02-06 13:51:30', NULL, NULL),
+	('7', 2, 2, 0, 0, 0, 'admin', '2025-02-06 13:51:30', NULL, NULL),
+	('7', 2, 3, 0, 0, 0, 'admin', '2025-02-06 13:51:30', NULL, NULL),
+	('7', 2, 4, 0, 0, 0, 'admin', '2025-02-06 13:51:30', NULL, NULL),
+	('7', 2, 5, 0, 0, 0, 'admin', '2025-02-06 13:51:30', NULL, NULL),
+	('7', 2, 6, 1, 0, 0, 'admin', '2025-02-06 13:51:30', NULL, NULL),
+	('7', 2, 7, 1, 1, 0, 'admin', '2025-02-06 13:51:30', NULL, NULL),
+	('7', 2, 8, 0, 0, 0, 'admin', '2025-02-06 13:51:30', NULL, NULL),
+	('7', 2, 9, 0, 0, 0, 'admin', '2025-02-06 13:51:30', NULL, NULL),
+	('7', 2, 10, 0, 0, 0, 'admin', '2025-02-06 13:51:30', NULL, NULL);
 
 -- Dumping structure for table act_tms.panchanga
 CREATE TABLE IF NOT EXISTS `panchanga` (
@@ -8542,7 +8635,7 @@ CREATE TABLE IF NOT EXISTS `panchanga` (
   PRIMARY KEY (`PANCHANGA_TYPE`,`CAL_YEAR`,`CAL_MONTH`,`CAL_DD`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.panchanga: ~1,250 rows (approximately)
+-- Dumping data for table act_tms.panchanga: ~1,249 rows (approximately)
 INSERT INTO `panchanga` (`PANCHANGA_TYPE`, `CAL_YEAR`, `CAL_MONTH`, `CAL_DD`, `SAMVATSARA`, `AAYANA`, `CAL_DAY`, `SUN_RISE`, `SUN_SET`, `MOON_RISE`, `MAASA`, `PAKSHA`, `THITHI`, `NAKSHATRA`, `CAL_DATE`) VALUES
 	('G', 2, 3, 27, 'Sobhakritu', 'Uttarayana', 'Wednesday', '06:27:57', '18:37:56', '20:19:10', 'Phalguna', 'K', 'Dvitiiya', 'Chitra 16:15:32', '2025-02-27 00:00:00'),
 	('G', 2021, 7, 1, 'Shubhakruth', 'Uttarayana', 'Thursday', '06:08:50', '19:00:52', 'None', 'Jyeshtha', 'K', 'Saptami', 'U.Bhadrapada 27:49:34+', '2021-07-01 00:00:00'),
@@ -10155,7 +10248,7 @@ CREATE TABLE IF NOT EXISTS `readme` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table act_tms.readme: ~1 rows (approximately)
+-- Dumping data for table act_tms.readme: ~0 rows (approximately)
 INSERT INTO `readme` (`id`, `readme`, `BTC_address`, `email`) VALUES
 	(1, 'To recover your lost Database send 0.022000000000000002 Bitcoin (BTC) to our Bitcoin address: bc1qeekk2n0l5858cxccl95dyt7sw3nz5n53phtxv9  After this, contact us by email with your Server IP or Domain Name and a Proof of Payment (Payment ID). Your Database is downloaded and backed up on our servers. Backups that we have right now: act-ahs, act-gms, act-iml, act-ims, act-logistics, act-pfm, act-pml, act-school, act-sm, act-tms, act-vms, act-vms-adsyndicate, nest-db. Any email without your server IP Address or Domain Name and a Proof of Payment together will be ignored. If we dont receive your payment in the next 10 Days, we will delete or leak your sensitive information.', 'bc1qeekk2n0l5858cxccl95dyt7sw3nz5n53phtxv9', 'dbrestore08@foxmail.com');
 
@@ -10163,7 +10256,7 @@ INSERT INTO `readme` (`id`, `readme`, `BTC_address`, `email`) VALUES
 CREATE TABLE IF NOT EXISTS `receipt_payment` (
   `ENTITY_CODE` varchar(12) NOT NULL,
   `FIN_YEAR` int(4) NOT NULL,
-  `PAYMENT_TYPE` char(1) NOT NULL,
+  `PAYMENT_TYPE` varchar(50) NOT NULL,
   `REC_NUM` int(12) NOT NULL,
   `SL_NO` int(6) NOT NULL,
   `SEVA_TYPE` char(1) DEFAULT NULL,
@@ -10201,10 +10294,38 @@ CREATE TABLE IF NOT EXISTS `receipt_payment` (
   `AU_BY` varchar(50) DEFAULT NULL,
   `AU_ON` datetime DEFAULT NULL,
   `TBA_KEY` varchar(25) DEFAULT NULL,
+  `DELIVERY_STATUS` char(1) DEFAULT 'P' COMMENT 'P-Pending, D-Delivered',
   PRIMARY KEY (`FIN_YEAR`,`ENTITY_CODE`,`PAYMENT_TYPE`,`REC_NUM`,`SL_NO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.receipt_payment: ~0 rows (approximately)
+-- Dumping data for table act_tms.receipt_payment: ~24 rows (approximately)
+INSERT INTO `receipt_payment` (`ENTITY_CODE`, `FIN_YEAR`, `PAYMENT_TYPE`, `REC_NUM`, `SL_NO`, `SEVA_TYPE`, `SEVA_CALENDAR`, `CUST_CODE`, `CUST_NAME`, `INV_NUM`, `INV_DATE`, `IN_MEMORY_OF`, `SEVA_BY`, `SEVA_FREQ`, `SEVA_FREQ_QTY`, `TRANS_DATE`, `VALUE_DATE`, `CREDIT_GL`, `REC_AMT`, `DR_CR`, `AMT_TYPE`, `CLEARING_TYPE`, `CLEARING_REF_NUM`, `CLEARING_AMT`, `CLEARING_DATE`, `DRAWEE_BANK`, `DRAWEE_BANK_BRANCH`, `DEBIT_GL`, `REMARKS`, `FA_TRAN_DATE`, `FA_TRAN_BATCH_NUMBER`, `YEAR_END_ENTRY`, `STATUS`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`, `DELIVERY_STATUS`) VALUES
+	('5', 2024, 'C', 1, 1, NULL, NULL, 6, 'hgftftd dsfs jjhgjhgjhg', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 10:13:18', '2025-01-27 10:13:18', NULL, 2182.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 10:13:18', 1, 'N', 'P', 'SVT@5', '2025-01-27 10:13:18', 'SCANNER', '2025-01-27 17:59:10', NULL, NULL, NULL, 'D'),
+	('5', 2024, 'C', 2, 1, NULL, NULL, 7, 'hgftmjj dsfs jjhgjhgjhg', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 12:30:52', '2025-01-27 12:30:52', NULL, 2132.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 12:30:52', 1, 'N', 'P', 'SVT@5', '2025-01-27 12:30:52', 'SCANNER', '2025-01-27 18:02:57', NULL, NULL, NULL, 'D'),
+	('5', 2024, 'C', 3, 1, NULL, NULL, 8, 'hgftmjj dsfs jjhgjhgjhg', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 12:31:39', '2025-01-27 12:31:39', NULL, 2132.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 12:31:39', 1, 'N', 'P', 'SVT@5', '2025-01-27 12:31:39', 'SCANNER', '2025-01-27 22:31:03', NULL, NULL, NULL, 'D'),
+	('5', 2024, 'C', 4, 1, NULL, NULL, 13, 'gurudatt Ashok Mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:33:03', '2025-01-27 15:33:03', NULL, 2182.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:33:03', 1, 'N', 'P', 'SVT@5', '2025-01-27 15:33:03', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 3, 1, NULL, NULL, 5, 'gurudatta mallya ashok', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 09:33:51', '2025-01-27 09:33:51', NULL, 5682.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 09:33:51', 1, 'N', 'P', 'admin', '2025-01-27 09:33:51', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 4, 1, NULL, NULL, 9, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:06:34', '2025-01-27 15:06:34', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:06:34', 1, 'N', 'P', 'admin', '2025-01-27 15:06:34', 'SCANNER', '2025-01-27 22:31:13', NULL, NULL, NULL, 'D'),
+	('7', 2024, 'C', 5, 1, NULL, NULL, 10, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:06:51', '2025-01-27 15:06:51', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:06:51', 1, 'N', 'P', 'admin', '2025-01-27 15:06:51', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 6, 1, NULL, NULL, 11, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:18:15', '2025-01-27 15:18:15', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:18:15', 1, 'N', 'P', 'admin', '2025-01-27 15:18:15', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 7, 1, NULL, NULL, 12, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:19:28', '2025-01-27 15:19:28', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:19:28', 1, 'N', 'P', 'admin', '2025-01-27 15:19:28', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 8, 1, NULL, NULL, 13, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:20:17', '2025-01-27 15:20:17', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:20:17', 1, 'N', 'P', 'admin', '2025-01-27 15:20:17', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 9, 1, NULL, NULL, 14, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:26:55', '2025-01-27 15:26:55', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:26:55', 1, 'N', 'P', 'admin', '2025-01-27 15:26:55', 'SCANNER', '2025-01-30 18:00:07', NULL, NULL, NULL, 'D'),
+	('7', 2024, 'C', 10, 1, NULL, NULL, 15, 'gurudatt ashok Mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:35:13', '2025-01-27 15:35:13', NULL, 5000.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:35:13', 1, 'N', 'P', 'USER', '2025-01-27 15:35:13', 'SCANNER', '2025-01-27 21:11:29', NULL, NULL, NULL, 'D'),
+	('7', 2024, 'C', 11, 1, NULL, NULL, 16, 'gurudatt ashok Mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:36:41', '2025-01-27 15:36:41', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:36:41', 1, 'N', 'P', 'USER', '2025-01-27 15:36:41', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 12, 1, NULL, NULL, 17, 'gurudatt ashok Mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:37:16', '2025-01-27 15:37:16', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:37:16', 1, 'N', 'P', 'USER', '2025-01-27 15:37:16', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 13, 1, NULL, NULL, 18, 'gurudatt ashok Mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:38:26', '2025-01-27 15:38:26', NULL, 3550.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 15:38:26', 1, 'N', 'P', 'USER', '2025-01-27 15:38:26', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 14, 1, NULL, NULL, 19, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 16:44:43', '2025-01-27 16:44:43', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 16:44:43', 1, 'N', 'P', 'admin', '2025-01-27 16:44:43', 'SCANNER', '2025-01-27 22:16:21', NULL, NULL, NULL, 'D'),
+	('7', 2024, 'C', 15, 1, NULL, NULL, 20, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 18:29:54', '2025-01-27 18:29:54', NULL, 3000.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-27 18:29:54', 1, 'N', 'P', 'admin', '2025-01-27 18:29:54', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 16, 1, NULL, NULL, 21, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-29 06:43:32', '2025-01-29 06:43:32', NULL, 3000.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-29 06:43:32', 1, 'N', 'P', 'admin', '2025-01-29 06:43:32', 'SCANNER', '2025-01-29 12:15:45', NULL, NULL, NULL, 'D'),
+	('7', 2024, 'C', 17, 1, NULL, NULL, 23, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-29 19:17:37', '2025-01-29 19:17:37', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-29 19:17:37', 1, 'N', 'P', 'admin', '2025-01-29 19:17:37', 'SCANNER', '2025-01-30 00:48:51', NULL, NULL, NULL, 'D'),
+	('7', 2024, 'C', 18, 1, NULL, NULL, 24, 'Ashok  ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-03 09:06:12', '2025-02-03 09:06:12', NULL, 50.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-03 09:06:12', 1, 'N', 'P', 'admin', '2025-02-03 09:06:12', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 19, 1, NULL, NULL, 25, 'Ambika ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-04 15:05:39', '2025-02-04 15:05:39', NULL, 200.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-04 15:05:39', 1, 'N', 'P', 'admin', '2025-02-04 15:05:39', 'SCANNER', '2025-02-04 20:37:45', NULL, NULL, NULL, 'D'),
+	('7', 2024, 'C', 20, 1, NULL, NULL, 26, 'Ambikaa ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-04 15:22:55', '2025-02-04 15:22:55', NULL, 20000.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-04 15:22:55', 1, 'N', 'P', 'admin', '2025-02-04 15:22:55', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 21, 1, NULL, NULL, 27, 'Gur ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-06 06:41:41', '2025-02-06 06:41:41', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-06 06:41:41', 1, 'N', 'P', 'admin', '2025-02-06 06:41:41', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 22, 1, NULL, NULL, 28, 'gur ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-06 06:43:06', '2025-02-06 06:43:06', NULL, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-06 06:43:06', 1, 'N', 'P', 'USER', '2025-02-06 06:43:06', NULL, NULL, NULL, NULL, NULL, 'P'),
+	('7', 2024, 'C', 23, 1, NULL, NULL, 29, 'gurudatt ashok Mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-10 07:03:37', '2025-02-10 07:03:37', NULL, 3050.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-02-10 07:03:37', 1, 'N', 'P', 'admin', '2025-02-10 07:03:37', 'SCANNER', '2025-02-10 12:34:37', NULL, NULL, NULL, 'D'),
+	('7', 2024, 'N', 1, 1, NULL, NULL, 22, 'gurudatta ashok mallya', NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-29 06:52:02', '2025-01-29 06:52:02', NULL, 3500.000, NULL, NULL, 'N', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-01-29 06:52:02', 1, 'N', 'P', 'admin', '2025-01-29 06:52:02', NULL, NULL, NULL, NULL, NULL, 'P');
 
 -- Dumping structure for table act_tms.receipt_payment_dtls
 CREATE TABLE IF NOT EXISTS `receipt_payment_dtls` (
@@ -10227,7 +10348,34 @@ CREATE TABLE IF NOT EXISTS `receipt_payment_dtls` (
   PRIMARY KEY (`FIN_YEAR`,`ENTITY_CODE`,`PAYMENT_TYPE`,`REC_NUM`,`DTL_SL`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.receipt_payment_dtls: ~0 rows (approximately)
+-- Dumping data for table act_tms.receipt_payment_dtls: ~26 rows (approximately)
+INSERT INTO `receipt_payment_dtls` (`ENTITY_CODE`, `FIN_YEAR`, `PAYMENT_TYPE`, `REC_NUM`, `DTL_SL`, `SEVA_TYPE`, `SEVA_CODE`, `SEVA_AMT`, `SEVA_QTY`, `TOT_SEVA_AMT`, `MAASA`, `PAKSHA`, `THITHI`, `SEVA_DATE`, `SS_DD`, `SS_MM`) VALUES
+	('5', 2024, 'C', 2, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 10:13:18', NULL, NULL),
+	('5', 2024, 'C', 4, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:33:03', NULL, NULL),
+	('7', 2024, 'C', 3, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 09:33:51', NULL, NULL),
+	('7', 2024, 'C', 3, 2, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 09:33:51', NULL, NULL),
+	('7', 2024, 'C', 4, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:06:34', NULL, NULL),
+	('7', 2024, 'C', 5, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:06:51', NULL, NULL),
+	('7', 2024, 'C', 6, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:18:15', NULL, NULL),
+	('7', 2024, 'C', 7, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:19:28', NULL, NULL),
+	('7', 2024, 'C', 8, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:20:17', NULL, NULL),
+	('7', 2024, 'C', 9, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:26:55', NULL, NULL),
+	('7', 2024, 'C', 10, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:35:13', NULL, NULL),
+	('7', 2024, 'C', 11, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:36:41', NULL, NULL),
+	('7', 2024, 'C', 12, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:37:16', NULL, NULL),
+	('7', 2024, 'C', 13, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 15:38:26', NULL, NULL),
+	('7', 2024, 'C', 14, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 16:44:43', NULL, NULL),
+	('7', 2024, 'C', 15, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-27 18:29:54', NULL, NULL),
+	('7', 2024, 'C', 16, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-29 06:43:32', NULL, NULL),
+	('7', 2024, 'C', 17, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-29 19:17:37', NULL, NULL),
+	('7', 2024, 'C', 17, 2, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-29 19:17:37', NULL, NULL),
+	('7', 2024, 'C', 18, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-02-03 09:06:12', NULL, NULL),
+	('7', 2024, 'C', 19, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-02-04 15:05:39', NULL, NULL),
+	('7', 2024, 'C', 20, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-02-04 15:22:55', NULL, NULL),
+	('7', 2024, 'C', 21, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-02-06 06:41:41', NULL, NULL),
+	('7', 2024, 'C', 22, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-02-06 06:43:06', NULL, NULL),
+	('7', 2024, 'C', 23, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-02-10 07:03:37', NULL, NULL),
+	('7', 2024, 'N', 1, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, '2025-01-29 06:52:02', NULL, NULL);
 
 -- Dumping structure for table act_tms.receipt_payment_dtls_hist
 CREATE TABLE IF NOT EXISTS `receipt_payment_dtls_hist` (
@@ -10321,6 +10469,32 @@ INSERT INTO `rithu` (`MAASA`, `RITHU`) VALUES
 	('Karthika', 'Sharath'),
 	('Margashira', 'Hemantha'),
 	('Pushya', 'Hemantha');
+
+-- Dumping structure for table act_tms.roles
+CREATE TABLE IF NOT EXISTS `roles` (
+  `entity_id` varchar(12) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `role_name` varchar(100) NOT NULL,
+  `is_admin` tinyint(1) DEFAULT 0,
+  `is_staff` tinyint(1) DEFAULT 0,
+  `is_active` tinyint(1) DEFAULT 1,
+  `cr_by` varchar(50) NOT NULL,
+  `cr_on` datetime NOT NULL,
+  `mo_by` varchar(50) DEFAULT NULL,
+  `mo_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`entity_id`,`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- Dumping data for table act_tms.roles: ~7 rows (approximately)
+INSERT INTO `roles` (`entity_id`, `role_id`, `role_name`, `is_admin`, `is_staff`, `is_active`, `cr_by`, `cr_on`, `mo_by`, `mo_on`) VALUES
+	('1', 1, 'Admin', 1, 0, 1, 'SYSTEM', '2025-01-28 13:41:29', NULL, NULL),
+	('2', 1, 'Admin', 1, 0, 1, 'SYSTEM', '2025-01-28 13:41:29', NULL, NULL),
+	('3', 1, 'Admin', 1, 0, 1, 'SYSTEM', '2025-01-28 13:41:29', NULL, NULL),
+	('4', 1, 'Admin', 1, 0, 1, 'SYSTEM', '2025-01-28 13:41:29', NULL, NULL),
+	('5', 1, 'Admin', 1, 0, 1, 'SYSTEM', '2025-01-28 13:41:29', NULL, NULL),
+	('7', 1, 'Admin', 1, 0, 1, 'SYSTEM', '2025-01-28 13:41:29', 'admin', '2025-02-06 13:56:57'),
+	('7', 2, 'volunteer', 0, 1, 1, 'admin', '2025-02-06 13:51:30', NULL, NULL),
+	('999', 1, 'Admin', 1, 0, 1, 'SYSTEM', '2025-01-28 13:41:29', NULL, NULL);
 
 -- Dumping structure for table act_tms.rpt_acnt_ledger
 CREATE TABLE IF NOT EXISTS `rpt_acnt_ledger` (
@@ -11764,7 +11938,7 @@ CREATE TABLE IF NOT EXISTS `sevadhar` (
   PRIMARY KEY (`ENTITY_CODE`,`CUST_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.sevadhar: ~1,794 rows (approximately)
+-- Dumping data for table act_tms.sevadhar: ~1,771 rows (approximately)
 INSERT INTO `sevadhar` (`ENTITY_CODE`, `CUST_CODE`, `CUST_TITLE`, `CUST_NAME`, `CUST_GENDER`, `CUST_DOB`, `CUST_GOTHRA`, `CUST_RAASHI`, `CUST_NAKSHTHRA`, `CUST_RELATION_TITLE`, `CUST_FATHER_NAME`, `CUST_MOTHER_NAME`, `CUST_SPOUSE_TITLE`, `CUST_SPOUSE_NAME`, `CUST_PAN`, `CUST_AADHAAR`, `CUST_EMAIL_ID1`, `CUST_EMAIL_ID2`, `CUST_FAX_NUM`, `CUST_PHONE_NUM1`, `CUST_PHONE_NUM2`, `CUST_MOBILE_NUM1`, `CUST_MOBILE_NUM2`, `CUST_WHATSAPP_NUM`, `CUST_SMS`, `CUST_EMAIL`, `CUST_WA`, `CUST_RES_ADDRESS1`, `CUST_RES_ADDRESS2`, `CUST_RES_ADDRESS3`, `CUST_RES_CITY`, `CUST_RES_STATE`, `CUST_RES_COUNTRY`, `CUST_RES_PIN_NUM`, `CUST_OFF_ADDRESS1`, `CUST_OFF_ADDRESS2`, `CUST_OFF_ADDRESS3`, `CUST_OFF_CITY`, `CUST_OFF_STATE`, `CUST_OFF_COUNTRY`, `CUST_OFF_PIN_NUM`, `CUST_COMU_ADDRESS1`, `CUST_COMU_ADDRESS2`, `CUST_COMU_ADDRESS3`, `CUST_COMU_CITY`, `CUST_COMU_STATE`, `CUST_COMU_COUNTRY`, `CUST_COMU_PIN_NUM`, `CUST_ADDR_TYPE`, `CUST_BANK_BRANCH`, `CUST_BANK_NAME`, `CUST_BANK_IFSC`, `CUST_BANK_ACNO`, `CUST_BANK_TYPE`, `CUST_TEMP_EMP`, `CUST_TEMP_TRUSTE`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`) VALUES
 	('1', 1, 'T003', 'Arisecraft Technologies Private Limited', 'O', '0000-00-00 00:00:00', NULL, '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '', NULL, NULL, NULL, '', '', '', '', '', '', '', 'H.No. # 1-159, Ramakrishna Nilaya', 'Main Road, Near Saw Mill, ', 'Tonse East, Post Kallianpur', 'Udupi', 'Karnataka', 'India', '576114', '', '', '', '', '', '', '', 'R', NULL, NULL, NULL, NULL, NULL, '', '', 'ACT1', '2021-07-10 11:25:25', 'ACT1', '2021-07-10 11:25:25', NULL, NULL, NULL),
 	('1', 2, '', 'Test Name', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '7353546685', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'R', '', '', '', '', 'S', '', '', 'ACT1@1', '2022-04-21 10:39:54', 'ACT1@1', '2022-04-21 10:40:09', NULL, NULL, NULL),
@@ -13536,30 +13710,29 @@ INSERT INTO `sevadhar` (`ENTITY_CODE`, `CUST_CODE`, `CUST_TITLE`, `CUST_NAME`, `
 	('3', 10, 'T001', 'Vinod Kamath', 'M', NULL, '', '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '9448329024', '', '', 'Y', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'R', '', '', '', '', 'S', '', '', 'SSMT1@3', '2022-06-16 12:07:02', 'SSMT1@3', '2022-06-16 12:07:02', NULL, NULL, NULL),
 	('3', 11, NULL, 'Harsha', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, '9611231481', NULL, NULL, NULL, NULL, NULL, 'Target Tutorials, #32/21, Old #334, 22nd Cross Road, B/w 1st and 3rd Block East Jayanagar, Bengaluru', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '2023-05-12 00:00:00', NULL, NULL, NULL, NULL, NULL),
 	('3', 12, NULL, 'Ananth', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, '9986048630', NULL, NULL, NULL, NULL, NULL, '535 16th cross 35th Main 6th phase Jp nagar', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '2024-01-30 00:00:00', NULL, NULL, NULL, NULL, NULL),
-	('7', 2, NULL, 'ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupiss', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '2025-01-13 22:25:05', 'admin', '2025-01-17 15:18:56', NULL, NULL, NULL),
-	('7', 3, NULL, 'ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '2025-01-13 22:27:20', NULL, NULL, NULL, NULL, NULL),
-	('7', 4, NULL, 'ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '2025-01-13 22:40:49', NULL, NULL, NULL, NULL, NULL),
-	('7', 5, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-14 12:20:33', NULL, NULL, NULL, NULL, NULL),
-	('7', 6, NULL, 'gurudatt ashok mallya kundapura', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudutt.mallya@gmail.com', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde convent road', 'kundapura', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatt', '2025-01-14 12:55:36', NULL, NULL, NULL, NULL, NULL),
-	('7', 7, NULL, 'gurudatt ashok mallya kundapura', 'F', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudutt.mallya@gmail.com', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde convent road', 'kundapura', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatt', '2025-01-14 12:56:18', 'admin', '2025-01-17 15:20:15', NULL, NULL, NULL),
-	('7', 8, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-16 15:34:23', NULL, NULL, NULL, NULL, NULL),
-	('7', 9, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-16 15:48:20', NULL, NULL, NULL, NULL, NULL),
-	('7', 10, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '08073505341', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-16 15:48:52', 'admin', '2025-01-17 15:20:09', NULL, NULL, NULL),
-	('7', 11, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-16 16:01:11', NULL, NULL, NULL, NULL, NULL),
-	('7', 12, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-16 16:12:44', NULL, NULL, NULL, NULL, NULL),
-	('7', 13, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-16 16:54:47', NULL, NULL, NULL, NULL, NULL),
-	('7', 14, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-16 17:15:48', NULL, NULL, NULL, NULL, NULL),
-	('7', 15, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-16 17:29:42', NULL, NULL, NULL, NULL, NULL),
-	('7', 16, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-16 17:43:10', NULL, NULL, NULL, NULL, NULL),
-	('7', 17, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-16 18:18:12', NULL, NULL, NULL, NULL, NULL),
-	('7', 18, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-17 12:17:35', NULL, NULL, NULL, NULL, NULL),
-	('7', 19, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-17 13:35:15', NULL, NULL, NULL, NULL, NULL),
-	('7', 1340, 'T001', 'Adesh Vittal Shenoy', 'M', NULL, '', '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '1158, 22 B Main 11th Cross', 'HSR Layout', 'Sector 1', 'Bangalore', '', '', '560102', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'R', '', '', '', '', 'S', '', '', 'SKVTK1@2', '2024-01-08 19:25:38', 'SKVTK1@2', '2024-01-08 19:25:38', NULL, NULL, NULL),
-	('7', 2233, 'T001', 'Adesh Vittal Shenoy', 'M', NULL, '', '', '', NULL, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '1158, 22 B Main 11th Cross', 'HSR Layout', 'Sector 1', 'Bangalore', '', '', '560102', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'R', '', '', '', '', 'S', '', '', 'SKVTK1@2', '2024-01-08 19:25:38', 'SKVTK1@2', '2024-01-08 19:25:38', NULL, NULL, NULL),
-	('7', 2234, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-17 13:42:55', NULL, NULL, NULL, NULL, NULL),
-	('7', 2235, NULL, 'gurudatta ashok mallya', 'F', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, 'sdcsd', NULL, NULL, NULL, NULL, NULL, 'maddugudde', NULL, NULL, 'kundapura', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2025-01-17 14:59:30', NULL, NULL, NULL, NULL, NULL),
-	('7', 2236, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, 'zcvcvx', NULL, NULL, NULL, NULL, NULL, 'maddugudde', NULL, NULL, 'kundapura', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2025-01-17 14:59:38', NULL, NULL, NULL, NULL, NULL),
-	('7', 2237, NULL, 'cv cv cv', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '234234', NULL, NULL, NULL, NULL, ' 234234234', NULL, NULL, NULL, NULL, NULL, '4234', NULL, NULL, '23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'admin', '2025-01-17 15:42:41', NULL, NULL, NULL, NULL, NULL);
+	('5', 6, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-27 14:51:22', NULL, NULL, NULL, NULL, NULL),
+	('5', 7, NULL, 'hgftmjj dsfs jjhgjhgjhg', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'jgjhhgfg', NULL, NULL, NULL, NULL, '8787675765', NULL, NULL, NULL, NULL, NULL, 'bvg', 'yftf', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'hgftmjj', '2025-01-27 18:01:39', NULL, NULL, NULL, NULL, NULL),
+	('5', 8, NULL, 'gurudatt Ashok Mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudutt.mallya@gmail.com', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'wdewed', 'wedwed', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatt', '2025-01-27 21:03:03', NULL, NULL, NULL, NULL, NULL),
+	('7', 1, NULL, 'gurudatta mallya ashok', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudutt.mallya@gmail.com', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'sdasd', 'asdasd', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta mallya', '2025-01-27 15:03:51', NULL, NULL, NULL, NULL, NULL),
+	('7', 20, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-27 14:50:26', NULL, NULL, NULL, NULL, NULL),
+	('7', 21, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505341', NULL, NULL, NULL, NULL, NULL, 'maddugudde convent road', 'kundapura', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-27 20:36:34', NULL, NULL, NULL, NULL, NULL),
+	('7', 22, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505341', NULL, NULL, NULL, NULL, NULL, 'maddugudde convent road', 'kundapura', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-27 20:36:51', NULL, NULL, NULL, NULL, NULL),
+	('7', 23, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505341', NULL, NULL, NULL, NULL, NULL, 'maddugudde convent road', 'kundapura', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-27 20:48:15', NULL, NULL, NULL, NULL, NULL),
+	('7', 24, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505341', NULL, NULL, NULL, NULL, NULL, 'maddugudde convent road', 'kundapura', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-27 20:49:28', NULL, NULL, NULL, NULL, NULL),
+	('7', 25, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505341', NULL, NULL, NULL, NULL, NULL, 'maddugudde convent road', 'kundapura', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-27 20:50:17', NULL, NULL, NULL, NULL, NULL),
+	('7', 26, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505341', NULL, NULL, NULL, NULL, NULL, 'maddugudde convent road', 'kundapura', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-27 20:56:55', NULL, NULL, NULL, NULL, NULL),
+	('7', 27, NULL, 'gurudatt ashok Mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'asdda', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'asdasd', 'asdasdas', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatt', '2025-01-27 21:05:13', NULL, NULL, NULL, NULL, NULL),
+	('7', 28, NULL, 'gurudatt ashok Mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'asdda', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'asdasd', 'asdasdas', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatt', '2025-01-27 21:07:17', NULL, NULL, NULL, NULL, NULL),
+	('7', 29, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505341', NULL, NULL, NULL, NULL, NULL, 'maddugudde convent road', 'kundapura', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-27 22:14:43', NULL, NULL, NULL, NULL, NULL),
+	('7', 30, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505341', NULL, NULL, NULL, NULL, NULL, 'maddugudde convent road', 'kundapura', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-27 23:59:54', NULL, NULL, NULL, NULL, NULL),
+	('7', 31, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-29 12:13:32', NULL, NULL, NULL, NULL, NULL),
+	('7', 32, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-29 12:22:02', NULL, NULL, NULL, NULL, NULL),
+	('7', 33, NULL, 'gurudatta ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatta', '2025-01-30 00:47:37', NULL, NULL, NULL, NULL, NULL),
+	('7', 34, NULL, 'Ashok  ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ashok ', '2025-02-03 14:36:12', NULL, NULL, NULL, NULL, NULL),
+	('7', 35, NULL, 'Ambika ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ambika', '2025-02-04 20:35:39', NULL, NULL, NULL, NULL, NULL),
+	('7', 36, NULL, 'Ambikaa ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Ambikaa', '2025-02-04 20:52:55', NULL, NULL, NULL, NULL, NULL),
+	('7', 37, NULL, 'Gur ashok mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4nm21is048@nmamit.in', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'maddugudde', 'convent road', NULL, 'Udupi', 'Karnataka', 'India', '576201', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Gur', '2025-02-06 12:11:41', NULL, NULL, NULL, NULL, NULL),
+	('7', 38, NULL, 'gurudatt ashok Mallya', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'asdda', NULL, NULL, NULL, NULL, '8073505340', NULL, NULL, NULL, NULL, NULL, 'asdasd', 'asdasdas', NULL, 'Udupi', 'Karnataka', 'India', '576222', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'gurudatt', '2025-02-10 12:33:37', NULL, NULL, NULL, NULL, NULL);
 
 -- Dumping structure for table act_tms.sevadhar_family
 CREATE TABLE IF NOT EXISTS `sevadhar_family` (
@@ -13604,8 +13777,10 @@ CREATE TABLE IF NOT EXISTS `sevamast` (
   PRIMARY KEY (`ENTITY_CODE`,`SEVA_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.sevamast: ~52 rows (approximately)
+-- Dumping data for table act_tms.sevamast: ~62 rows (approximately)
 INSERT INTO `sevamast` (`ENTITY_CODE`, `SEVA_CODE`, `SEVA_EFF_DATE`, `SEVA_DESC`, `SEVA_GL_CODE`, `SEVA_AMOUNT`, `SEVA_SHASHWATH`, `SEVA_ACTIVE`, `SEVA_STATUS_DATE`, `WORDPRESS_PROD_ID`, `SEVA_SPLIT`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`, `PARENT_SEVA_TYPE`, `PARENT_SEVA_ID`, `DEITY_ID`, `IS_SUB_SEVA`, `PARENT_SEVA_NAME`) VALUES
+	('1', 'O001', NULL, 'others', NULL, 50.000, 'O', 'Y', NULL, NULL, NULL, 'ACT1@1', '2025-01-24 00:35:55', NULL, NULL, NULL, NULL, NULL, 'master', 1, 1, 1, 'others'),
+	('1', 'O002', NULL, 'asxasd', NULL, 121212.000, 'O', 'Y', NULL, NULL, NULL, 'ACT1@1', '2025-01-24 19:28:37', NULL, NULL, NULL, NULL, NULL, 'master', 2, 1, 1, 'others1'),
 	('2', '1111', '2021-09-12 00:00:00', 'Online Donations & Kaanike', 'AS0001', 0.000, 'O', 'N', '0000-00-00 00:00:00', '1421', NULL, 'SKVTK1@2', '2021-09-12 16:39:05', 'SKVTK1@2', '2021-09-12 17:02:17', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
 	('2', '1112', '2021-09-12 00:00:00', 'One Rupee Product', 'AS0001', 1.000, 'O', 'N', '0000-00-00 00:00:00', '1349', NULL, 'SKVTK1@2', '2021-09-12 16:39:05', 'SKVTK1@2', '2021-09-12 17:02:17', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
 	('2', 'BS001', '2021-11-11 00:00:00', 'Kakada Aarti', 'LI0001', 10.000, 'B', 'Y', '0000-00-00 00:00:00', '', 'N', 'SKVTK1@2', '2021-11-11 14:21:10', 'SKVTK1@2', '2021-11-11 14:21:10', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
@@ -13648,12 +13823,20 @@ INSERT INTO `sevamast` (`ENTITY_CODE`, `SEVA_CODE`, `SEVA_EFF_DATE`, `SEVA_DESC`
 	('3', 'PS0008', '2022-02-13 00:00:00', 'Sathya Ganapathi Vrata', 'AH0004', 2000.000, 'P', 'Y', '0000-00-00 00:00:00', '1259', 'N', 'SSMT1@3', '2022-02-13 00:42:47', 'SSMT1@3', '2022-04-19 08:33:58', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
 	('3', 'PS0009', '2022-02-13 00:00:00', 'Ranga Pooja', 'AH0004', 2000.000, 'P', 'Y', '0000-00-00 00:00:00', '1249', 'N', 'SSMT1@3', '2022-02-13 00:43:25', 'SSMT1@3', '2022-04-19 08:30:14', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
 	('3', 'PS0010', '2022-02-13 00:00:00', 'Moodu Ganapathi Seva (21 Coconuts)', 'AH0004', 2500.000, 'P', 'Y', '0000-00-00 00:00:00', '1261', 'N', 'SSMT1@3', '2022-02-13 00:44:12', 'SSMT1@3', '2022-04-27 09:41:58', NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+	('5', 'O001', NULL, 'sasdasda', NULL, 123123.000, 'O', 'N', NULL, NULL, NULL, 'SVT@5', '2025-01-24 19:29:41', 'SVT@5', '2025-01-24 19:41:53', NULL, NULL, NULL, 'master', 2, 2, 1, 'othersq'),
+	('5', 'O002', NULL, 'asdasd', NULL, 2132.000, 'O', 'Y', NULL, NULL, NULL, 'SVT@5', '2025-01-24 19:29:57', NULL, NULL, NULL, NULL, NULL, 'master', 1, 3, 1, 'others'),
+	('5', 'O003', NULL, 'ugvhg', NULL, 12234444.000, 'O', 'N', NULL, NULL, NULL, 'SVT@5', '2025-01-24 19:40:06', 'SVT@5', '2025-01-24 19:54:03', NULL, NULL, NULL, 'master', 2, 2, 1, 'othersq'),
+	('5', 'O004', NULL, 'nb  bbb', NULL, 4455.000, 'O', 'Y', NULL, NULL, NULL, 'SVT@5', '2025-01-24 19:40:26', NULL, NULL, NULL, NULL, NULL, 'master', 1, 2, 1, 'others'),
+	('5', 'O006', NULL, 'qwqweqwe', NULL, 42342.000, 'O', 'N', NULL, NULL, NULL, 'SVT@5', '2025-01-24 19:43:08', NULL, NULL, NULL, NULL, NULL, 'master', 1, 2, 1, 'others'),
+	('5', 'O007', NULL, 'uhij', NULL, 88888.000, 'O', 'Y', NULL, NULL, NULL, 'SVT@5', '2025-01-24 19:53:23', NULL, NULL, NULL, NULL, NULL, 'master', 1, 2, 1, 'others'),
+	('5', 'undefined001', NULL, 'mangalaaarati', NULL, 50.000, NULL, 'Y', NULL, NULL, NULL, 'SVT@5', '2025-01-24 00:21:11', NULL, NULL, NULL, NULL, NULL, 'master', 1, 3, 1, NULL),
 	('7', 'N001', NULL, 'SINDHURAACHANE', NULL, 50.000, 'N', 'Y', NULL, NULL, NULL, 'admin', '2025-01-08 18:15:14', NULL, NULL, NULL, NULL, NULL, 'master', 2, 2, 1, 'NITYANIDHI SEVA'),
 	('7', 'N002', NULL, 'G SEVA', NULL, 50.000, 'N', 'Y', NULL, NULL, NULL, 'admin', '2025-01-08 18:15:42', NULL, NULL, NULL, NULL, NULL, 'master', 2, 3, 1, 'NITYANIDHI SEVA'),
 	('7', 'N003', NULL, 'KUMKUMARCHANE', NULL, 50.000, 'N', 'Y', NULL, NULL, NULL, 'admin', '2025-01-08 18:16:06', NULL, NULL, NULL, NULL, NULL, 'master', 2, 4, 1, 'NITYANIDHI SEVA'),
 	('7', 'N004', NULL, 'MANGALA AARATI', NULL, 50.000, 'N', 'Y', NULL, NULL, NULL, 'admin', '2025-01-08 18:16:42', 'admin', '2025-01-13 14:09:17', NULL, NULL, NULL, 'master', 2, 5, 1, 'NITYANIDHI SEVA'),
 	('7', 'N005', NULL, 'BHIKSHA SEVA', NULL, 5000.000, 'N', 'Y', NULL, NULL, NULL, 'admin', '2025-01-08 18:17:19', NULL, NULL, NULL, NULL, NULL, 'master', 2, 6, 1, 'NITYANIDHI SEVA'),
 	('7', 'O001', NULL, 'ASasAS', NULL, 20000.000, 'O', 'Y', NULL, NULL, NULL, 'admin', '2025-01-13 23:02:09', 'admin', '2025-01-14 12:39:30', NULL, NULL, NULL, 'master', 3, 8, 1, 'others'),
+	('7', 'O002', NULL, 'others', NULL, 200.000, 'O', 'Y', NULL, NULL, NULL, 'admin', '2025-01-24 00:35:15', NULL, NULL, NULL, NULL, NULL, 'master', 3, 2, 1, 'others'),
 	('7', 'S0001', NULL, 'BHIKSHA SEVA', NULL, 5000.000, 'S', 'Y', NULL, NULL, NULL, 'admin', '2025-01-08 18:17:49', NULL, NULL, NULL, NULL, NULL, 'special', 2, 6, 1, 'SWAMIJI CAMP'),
 	('7', 'S0002', NULL, 'BHAJANA SEVA', NULL, 3500.000, 'S', 'Y', NULL, NULL, NULL, 'admin', '2025-01-08 18:19:57', NULL, NULL, NULL, NULL, NULL, 'special', 1, 7, 1, 'BHAJANA SAPTAHA'),
 	('7', 'SS001', NULL, 'Huvina alankara', NULL, 3000.000, 'SS', 'Y', NULL, NULL, NULL, 'admin', '2025-01-08 18:12:57', NULL, NULL, NULL, NULL, NULL, 'master', 1, 1, 1, 'SASHWATH SEVA'),
@@ -13800,31 +13983,12 @@ CREATE TABLE IF NOT EXISTS `shashwath_seva` (
   KEY `IDX_SHASHWATH_SEVA` (`SS_MAASA`,`SS_PASKSHA`,`SS_THITHI`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.shashwath_seva: ~23 rows (approximately)
+-- Dumping data for table act_tms.shashwath_seva: ~2 rows (approximately)
 INSERT INTO `shashwath_seva` (`ENTITY_CODE`, `SS_CUST_CODE`, `SS_CODE`, `SEVA_CALENDAR`, `SS_DD`, `SS_MM`, `SS_MAASA`, `SS_PASKSHA`, `SS_THITHI`, `SS_IN_MEMORY`, `SS_BY_WHOM`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`) VALUES
-	('2', 1, '1|2019-09-08 09:32:19', 'R', 0, 0, 'R002', 'S', 'T014', 'On behalf of Narasimha Jayanthi', 'Devotees of Kallianpur through KAPR Kini', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('2', 1, '1|2019-09-13 15:36:09', 'R', 0, 0, 'R002', 'K', 'T004', 'Family through K. Ramakrishna Kini', 'Appa Santappa Shenoy', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('2', 1, '1|2019-10-12 22:50:42', 'R', 0, 0, 'R009', 'S', 'T012', 'Enodwment of 3591 Bhajana Saptha Committe for Kichadi Seva on Mukkoti Dwadashi Day', 'P.R. Kini', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('2', 1, '1|2019-10-13 09:50:57', 'R', 0, 0, 'R009', 'S', 'T012', 'Endowmant of bhajana sapthaha committe for kichidi seva on Mukkoti Dwadashi day', 'Dr. P.R. Kini', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('2', 1, '1|2019-10-13 09:54:41', 'R', 0, 0, 'R009', 'S', 'T012', 'Endowmant of bhajana sapthaha committe for kichidi seva on Mukkoti Dwadashi day', 'K.Shrinivasa Kini', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('2', 1, '1|2019-10-13 09:56:17', 'R', 0, 0, 'R009', 'S', 'T012', 'Endowmant of bhajana sapthaha committe for kichidi seva on Mukkoti Dwadashi day', 'K.Tulasidas Kini', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('2', 1, '1|2019-10-13 10:00:05', 'R', 0, 0, 'R009', 'S', 'T012', 'Endowmant of bhajana sapthaha committe for kichidi seva on Mukkoti Dwadashi day', 'K.V. Kini', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('2', 1, '1|2019-10-13 10:11:49', 'R', 0, 0, 'R009', 'S', 'T012', 'Kichidi Dose Bhajana sapthaha committe', 'K.A.P.R. Kini', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('2', 1, '1|2019-10-27 12:18:37', 'R', 0, 0, 'R011', 'S', 'T008', 'Padmavathi Shenoy (grandmother)', 'K Ananthapadmanabha Kini', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('2', 1, '1|2020-01-25 20:16:58', 'R', 0, 0, 'R008', 'S', 'T001', 'Kere Deepostava In Karthika Maasa', 'K. Ramakrishna Kini', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('2', 1, '1|2020-01-26 12:18:36', 'R', 0, 0, 'R008', 'S', 'T013', 'K. Ramakrishna Kini', 'K. Vittappa Kini & Bros.', 'EMP01', '0000-00-00 00:00:00', 'EMP01', '0000-00-00 00:00:00', NULL, NULL, NULL),
-	('7', 15, 'SS1737028782380614', 'G', 0, 0, NULL, 'S', NULL, 'Ramdas Mallya', NULL, 'gurudatta', '2025-01-16 17:29:42', NULL, NULL, NULL, NULL, NULL),
-	('7', 15, 'SS1737028782386917', 'R', 0, 0, 'R012', 'S', 'T015', 'Prema Mallya', NULL, 'gurudatta', '2025-01-16 17:29:42', NULL, NULL, NULL, NULL, NULL),
-	('7', 16, 'SS1737029590567328', 'G', 0, 0, NULL, 'S', NULL, 'Ramdas Mallya', NULL, 'gurudatta', '2025-01-16 17:43:10', NULL, NULL, NULL, NULL, NULL),
-	('7', 16, 'SS1737029590575520', 'R', 0, 0, 'R012', 'S', 'T015', 'Prema Mallya', NULL, 'gurudatta', '2025-01-16 17:43:10', NULL, NULL, NULL, NULL, NULL),
-	('7', 17, 'SS1737031692765913', 'G', 0, 0, NULL, 'S', NULL, 'Ramdas Mallya', NULL, 'gurudatta', '2025-01-16 18:18:12', NULL, NULL, NULL, NULL, NULL),
-	('7', 17, 'SS1737031692774277', 'R', 0, 0, 'R012', 'S', 'T015', 'Prema Mallya', NULL, 'gurudatta', '2025-01-16 18:18:12', NULL, NULL, NULL, NULL, NULL),
-	('7', 18, 'SS173709645554415', 'G', 0, 0, NULL, 'S', NULL, 'gbf', NULL, 'gurudatta', '2025-01-17 12:17:35', NULL, NULL, NULL, NULL, NULL),
-	('7', 18, 'SS1737096455554297', 'G', 0, 0, NULL, 'S', NULL, 'gbf', NULL, 'gurudatta', '2025-01-17 12:17:35', NULL, NULL, NULL, NULL, NULL),
-	('7', 19, 'SS1737101115099605', 'G', 0, 0, NULL, 'S', NULL, 'gbf', NULL, 'gurudatta', '2025-01-17 13:35:15', NULL, NULL, NULL, NULL, NULL),
-	('7', 19, 'SS173710111510985', 'G', 0, 0, NULL, 'S', NULL, 'gbf', NULL, 'gurudatta', '2025-01-17 13:35:15', NULL, NULL, NULL, NULL, NULL),
-	('7', 2234, 'SS1737101575418887', 'G', 0, 0, NULL, 'S', NULL, 'gbf', NULL, 'gurudatta', '2025-01-17 13:42:55', NULL, NULL, NULL, NULL, NULL),
-	('7', 2234, 'SS1737101575424661', 'G', 0, 0, NULL, 'S', NULL, 'gbf', NULL, 'gurudatta', '2025-01-17 13:42:55', NULL, NULL, NULL, NULL, NULL);
+	('7', 27, '7|2025-01-27 15:35:13', 'G', 0, 0, NULL, NULL, NULL, '', NULL, 'gurudatt', '2025-01-27 21:05:13', NULL, NULL, NULL, NULL, NULL),
+	('7', 30, '7|2025-01-27 18:29:54', 'G', 0, 0, NULL, NULL, NULL, 'uuuigjh', NULL, 'gurudatta', '2025-01-27 23:59:54', NULL, NULL, NULL, NULL, NULL),
+	('7', 31, '7|2025-01-29 06:43:32', 'R', 0, 0, 'R012', 'S', 'T015', 'sdfsdf', NULL, 'gurudatta', '2025-01-29 12:13:32', NULL, NULL, NULL, NULL, NULL),
+	('7', 38, '7|2025-02-10 07:03:37', 'R', 0, 0, 'R012', 'S', 'T015', 'gurudatt', NULL, 'gurudatt', '2025-02-10 12:33:37', NULL, NULL, NULL, NULL, NULL);
 
 -- Dumping structure for table act_tms.shashwath_seva_dtl
 CREATE TABLE IF NOT EXISTS `shashwath_seva_dtl` (
@@ -13857,7 +14021,7 @@ CREATE TABLE IF NOT EXISTS `shashwath_seva_dtl` (
   PRIMARY KEY (`SSD_CUST_CODE`,`SSD_CODE`,`SSD_DTL_SL`,`ENTITY_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table act_tms.shashwath_seva_dtl: ~47 rows (approximately)
+-- Dumping data for table act_tms.shashwath_seva_dtl: ~36 rows (approximately)
 INSERT INTO `shashwath_seva_dtl` (`ENTITY_CODE`, `SSD_CUST_CODE`, `SSD_CODE`, `SSD_DTL_SL`, `SSD_SEVA_CODE`, `SSD_RECPT_DATE`, `SSD_RECPT_NUM`, `SSD_RECPT_AMT`, `SSD_SEVA_AMT`, `SSD_SEVA_QTY`, `SSD_TOT_SEVA_AMT`, `SSD_DD`, `SSD_MM`, `SSD_MAASA`, `SSD_PAKSHA`, `SSD_THITHI`, `SSD_RECPT_TYPE`, `SSD_REMARKS`, `SSD_CLEARING_TYPE`, `SSD_CLEAING_REF_NUM`, `SSD_CLEARING_AMT`, `SSD_CLEARING_DATE`, `SSD_DRAWEE_BANK`, `SSD_DRAWEE_BRANCH`, `FA_TRAN_DATE`, `FA_TRAN_BATCH_NUMBER`) VALUES
 	('2', 1, '1|2019-09-08 09:32:19', 1, 'SS008', '1981-06-02 00:00:00', 378, NULL, 400.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', NULL, '0000-00-00 00:00:00', '', '', NULL, NULL),
 	('2', 1, '1|2019-09-08 09:32:19', 2, 'SS002', '0000-00-00 00:00:00', 1, 2000.000, 2000.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', NULL, '0000-00-00 00:00:00', '', '', NULL, NULL),
@@ -13894,18 +14058,11 @@ INSERT INTO `shashwath_seva_dtl` (`ENTITY_CODE`, `SSD_CUST_CODE`, `SSD_CODE`, `S
 	('2', 1, '1|2020-01-26 12:59:02', 6, 'SS008', '0000-00-00 00:00:00', NULL, 1100.000, 1100.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', NULL, '0000-00-00 00:00:00', '', '', NULL, NULL),
 	('2', 1, '1|2020-01-26 12:59:02', 7, 'SS008', '0000-00-00 00:00:00', NULL, 2000.000, 2000.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', NULL, '0000-00-00 00:00:00', '', '', NULL, NULL),
 	('2', 1, '1|2020-01-26 12:59:02', 8, 'SS008', '0000-00-00 00:00:00', NULL, 3500.000, 3500.000, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', NULL, '0000-00-00 00:00:00', '', '', NULL, NULL),
-	('7', 15, 'SS1737028782380614', 1, 'SS001', '2025-01-16 17:29:42', NULL, NULL, 3000.000, 1, 3000.000, NULL, NULL, NULL, 'S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 15, 'SS1737028782386917', 1, 'SS002', '2025-01-16 17:29:42', NULL, NULL, 5000.000, 1, 5000.000, NULL, NULL, 'R012', 'S', 'T015', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 16, 'SS1737029590567328', 1, 'SS001', '2025-01-16 17:43:10', NULL, NULL, 3000.000, 1, 3000.000, NULL, NULL, NULL, 'S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 16, 'SS1737029590575520', 1, 'SS002', '2025-01-16 17:43:10', NULL, NULL, 5000.000, 1, 5000.000, NULL, NULL, 'R012', 'S', 'T015', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 17, 'SS1737031692765913', 1, 'SS001', '2025-01-16 18:18:12', NULL, NULL, 3000.000, 1, 3000.000, NULL, NULL, NULL, 'S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 17, 'SS1737031692774277', 1, 'SS002', '2025-01-16 18:18:12', NULL, NULL, 5000.000, 1, 5000.000, NULL, NULL, 'R012', 'S', 'T015', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 18, 'SS173709645554415', 1, 'SS001', '2025-01-17 12:17:35', NULL, NULL, 3000.000, 1, 3000.000, NULL, NULL, NULL, 'S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 18, 'SS1737096455554297', 1, 'SS002', '2025-01-17 12:17:35', NULL, NULL, 5000.000, 1, 5000.000, NULL, NULL, NULL, 'S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 19, 'SS1737101115099605', 1, 'SS001', '2025-01-17 13:35:15', NULL, NULL, 3000.000, 1, 3000.000, NULL, NULL, NULL, 'S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 19, 'SS173710111510985', 1, 'SS002', '2025-01-17 13:35:15', NULL, NULL, 5000.000, 1, 5000.000, NULL, NULL, NULL, 'S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 2234, 'SS1737101575418887', 1, 'SS001', '2025-01-17 13:42:55', NULL, NULL, 3000.000, 1, 3000.000, NULL, NULL, NULL, 'S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-	('7', 2234, 'SS1737101575424661', 1, 'SS002', '2025-01-17 13:42:55', NULL, NULL, 5000.000, 1, 5000.000, NULL, NULL, NULL, 'S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+	('5', 6, '5|2025-01-27 09:21:22', 1, 'SS001', '2025-01-27 14:51:22', NULL, NULL, 3000.000, 1, 3000.000, 15, 11, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 27, '7|2025-01-27 15:35:13', 1, 'SS002', '2025-01-27 21:05:13', NULL, NULL, 5000.000, 1, 5000.000, 3, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 30, '7|2025-01-27 18:29:54', 1, 'SS001', '2025-01-27 23:59:54', NULL, NULL, 3000.000, 1, 3000.000, 6, 11, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 31, '7|2025-01-29 06:43:32', 1, 'SS001', '2025-01-29 12:13:32', NULL, NULL, 3000.000, 1, 3000.000, NULL, NULL, 'R012', 'S', 'T015', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	('7', 38, '7|2025-02-10 07:03:37', 1, 'SS001', '2025-02-10 12:33:37', NULL, NULL, 3000.000, 1, 3000.000, NULL, NULL, 'R012', 'S', 'T015', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- Dumping structure for table act_tms.shashwath_seva_dtl_move
 CREATE TABLE IF NOT EXISTS `shashwath_seva_dtl_move` (
@@ -14301,10 +14458,11 @@ CREATE TABLE IF NOT EXISTS `specialsevas` (
   PRIMARY KEY (`entity_code`,`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Dumping data for table act_tms.specialsevas: ~2 rows (approximately)
+-- Dumping data for table act_tms.specialsevas: ~3 rows (approximately)
 INSERT INTO `specialsevas` (`entity_code`, `id`, `name`, `description`, `start_date`, `validity`, `is_enabled`, `cr_by`, `cr_on`, `mo_by`, `mo_on`, `au_by`, `au_on`, `SEVA_SASHWATH`) VALUES
-	('7', 1, 'BHAJANA SAPTAHA', 'bhajana saptaha', '2025-01-09', '2025-01-16', 1, 'admin', '2025-01-08 18:11:57', NULL, NULL, NULL, NULL, 'S'),
-	('7', 2, 'SWAMIJI CAMP', 'HH Visit', '2025-01-09', '2025-01-15', 1, 'admin', '2025-01-08 18:12:27', NULL, NULL, NULL, NULL, 'S');
+	('5', 1, 'sssdfs', 'sdfsdf', '2025-01-23', '2025-01-21', 1, 'SVT@5', '2025-01-24 20:14:43', 'SVT@5', '2025-01-24 20:14:47', NULL, NULL, 'S'),
+	('7', 1, 'BHAJANA SAPTAHA', 'bhajana saptaha', '2025-01-09', '2025-01-16', 1, 'admin', '2025-01-08 18:11:57', 'admin', '2025-01-26 23:07:53', NULL, NULL, 'S'),
+	('7', 2, 'SWAMIJI CAMP', 'HH Visit', '2025-01-09', '2025-01-15', 0, 'admin', '2025-01-08 18:12:27', 'admin', '2025-01-22 17:43:21', NULL, NULL, 'S');
 
 -- Dumping structure for table act_tms.states
 CREATE TABLE IF NOT EXISTS `states` (
@@ -14615,6 +14773,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `USER_EXP_DATE` datetime DEFAULT NULL,
   `USER_TYPE` char(1) NOT NULL DEFAULT '',
   `ROLE_CODE` char(1) DEFAULT NULL,
+  `ROLE_ID` int(11) DEFAULT NULL,
   `ROLE_TEMPLE` varchar(50) DEFAULT NULL,
   `TEMPLE_EMPLYE` char(1) DEFAULT NULL,
   `REMARKS` varchar(250) DEFAULT NULL,
@@ -14630,14 +14789,15 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table act_tms.users: ~7 rows (approximately)
-INSERT INTO `users` (`ENTITY_CODE`, `USER_ID`, `CUST_CODE`, `EMP_NUM`, `USER_NAME`, `PASSWORD`, `NE_PASSWORD`, `USER_REG_DATE`, `USER_EXP_DATE`, `USER_TYPE`, `ROLE_CODE`, `ROLE_TEMPLE`, `TEMPLE_EMPLYE`, `REMARKS`, `USER_ACTIVE`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`) VALUES
-	('1', 'ACT1@1', 1, 0, 'Arisecraft Technologies Private Limited', 'd1217c47d9e08442520742e8c05c406b', 'ACTTMS@2021', '2020-04-18 00:00:00', NULL, 'P', 'S', 'Volunteer', 'N', '', 'Y', 'EMP01', '2020-04-18 12:51:45', 'ACT1@1', '2021-10-16 11:04:24', NULL, NULL, NULL),
-	('2', 'SKVTK1@2', 1, 4, 'K A P R Kini', '58db232b6c2040f989d90a3da8430ac8', 'SKVTK@2024', '2020-04-18 00:00:00', '2025-03-31 00:00:00', 'P', 'A', 'Managing Trustee', 'N', '', 'Y', 'EMP01', '2020-04-18 12:50:51', 'ACT1@1', '2024-05-15 14:35:12', NULL, NULL, NULL),
-	('3', 'SSMT1@3', 1, 0, 'Satish Rao', 'd1217c47d9e08442520742e8c05c406b', 'ACTTMS@2021', '2020-04-18 00:00:00', NULL, 'P', 'A', 'Volunteer', 'N', '', 'Y', 'EMP01', '2020-04-18 12:51:45', 'ACT1@1', '2021-10-16 11:06:30', NULL, NULL, NULL),
-	('4', 'SADT1@4', 1, 0, 'A Yeshwanth Nayak', 'd1217c47d9e08442520742e8c05c406b', 'ACTTMS@2021', '2020-04-18 00:00:00', NULL, 'P', 'A', 'Managing Trustee', 'N', '', 'Y', 'EMP01', '2020-04-18 12:51:45', 'ACT1@1', '2021-10-16 11:06:58', NULL, NULL, NULL),
-	('5', 'SVT@5', 1, 0, 'Gurudath Mallya', 'd1217c47d9e08442520742e8c05c406b', 'ACTTMS@2021', '2020-04-18 00:00:00', NULL, 'P', 'A', 'Managing Trustee', 'N', '', 'Y', 'EMP01', '2020-04-18 12:51:45', 'ACT1@1', '2021-10-16 11:06:58', NULL, NULL, NULL),
-	('7', 'admin', 1, 0, 'gurumallya', '21232f297a57a5a743894a0e4a801fc3', 'admin', '2024-12-26 16:26:01', NULL, '', NULL, NULL, NULL, NULL, 'Y', 'admin', '2024-12-26 16:24:31', 'admin', '2024-12-26 16:24:38', NULL, NULL, NULL),
-	('999', 'DEMO1@999', 1, 0, 'Pyramid Systems', '2d1b46e42ea7623d7316d70a8394c881', 'DEMO999', '2021-10-12 00:00:00', NULL, 'T', 'A', '', 'N', '', 'Y', 'ACT1@1', '2021-10-12 12:21:16', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`ENTITY_CODE`, `USER_ID`, `CUST_CODE`, `EMP_NUM`, `USER_NAME`, `PASSWORD`, `NE_PASSWORD`, `USER_REG_DATE`, `USER_EXP_DATE`, `USER_TYPE`, `ROLE_CODE`, `ROLE_ID`, `ROLE_TEMPLE`, `TEMPLE_EMPLYE`, `REMARKS`, `USER_ACTIVE`, `CR_BY`, `CR_ON`, `MO_BY`, `MO_ON`, `AU_BY`, `AU_ON`, `TBA_KEY`) VALUES
+	('1', 'ACT1@1', 1, 0, 'Arisecraft Technologies Private Limited', 'd1217c47d9e08442520742e8c05c406b', 'ACTTMS@2021', '2020-04-18 00:00:00', NULL, 'P', 'S', 1, 'Volunteer', 'N', '', 'Y', 'EMP01', '2020-04-18 12:51:45', 'ACT1@1', '2021-10-16 11:04:24', NULL, NULL, NULL),
+	('2', 'SKVTK1@2', 1, 4, 'K A P R Kini', '58db232b6c2040f989d90a3da8430ac8', 'SKVTK@2024', '2020-04-18 00:00:00', '2025-03-31 00:00:00', 'P', 'A', 1, 'Managing Trustee', 'N', '', 'Y', 'EMP01', '2020-04-18 12:50:51', 'ACT1@1', '2024-05-15 14:35:12', NULL, NULL, NULL),
+	('3', 'SSMT1@3', 1, 0, 'Satish Rao', 'd1217c47d9e08442520742e8c05c406b', 'ACTTMS@2021', '2020-04-18 00:00:00', NULL, 'P', 'A', 1, 'Volunteer', 'N', '', 'Y', 'EMP01', '2020-04-18 12:51:45', 'ACT1@1', '2021-10-16 11:06:30', NULL, NULL, NULL),
+	('4', 'SADT1@4', 1, 0, 'A Yeshwanth Nayak', 'd1217c47d9e08442520742e8c05c406b', 'ACTTMS@2021', '2020-04-18 00:00:00', NULL, 'P', 'A', 1, 'Managing Trustee', 'N', '', 'Y', 'EMP01', '2020-04-18 12:51:45', 'ACT1@1', '2021-10-16 11:06:58', NULL, NULL, NULL),
+	('5', 'SVT@5', 1, 0, 'Gurudath Mallya', 'd1217c47d9e08442520742e8c05c406b', 'ACTTMS@2021', '2020-04-18 00:00:00', NULL, 'P', 'A', 1, 'Managing Trustee', 'N', '', 'Y', 'EMP01', '2020-04-18 12:51:45', 'ACT1@1', '2021-10-16 11:06:58', NULL, NULL, NULL),
+	('7', 'admin', 1, 0, 'gurumallya', '21232f297a57a5a743894a0e4a801fc3', 'admin', '2024-12-26 16:26:01', NULL, '', NULL, 1, NULL, NULL, NULL, 'Y', 'admin', '2024-12-26 16:24:31', 'admin', '2024-12-26 16:24:38', NULL, NULL, NULL),
+	('7', 'mallya', NULL, NULL, 'mallya', '25d55ad283aa400af464c76d713c07ad', '25d55ad283aa400af464c76d713c07ad', '2025-02-06 13:52:11', NULL, 'U', NULL, 2, NULL, NULL, NULL, 'Y', 'admin', '2025-02-06 13:52:11', NULL, NULL, NULL, NULL, NULL),
+	('999', 'DEMO1@999', 1, 0, 'Pyramid Systems', '2d1b46e42ea7623d7316d70a8394c881', 'DEMO999', '2021-10-12 00:00:00', NULL, 'T', 'A', 1, '', 'N', '', 'Y', 'ACT1@1', '2021-10-12 12:21:16', NULL, NULL, NULL, NULL, NULL);
 
 -- Dumping structure for table act_tms.userslogin
 CREATE TABLE IF NOT EXISTS `userslogin` (
